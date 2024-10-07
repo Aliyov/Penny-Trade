@@ -58,9 +58,6 @@ char* generate_new_date(char* date) {
     return new_date;
 }
 
-
-
-
 struct Price *generate_price(int initial_input_price, int total_case, float user_probability, float acceleration, char *user_input_date) {
     Price* head = create_price_node(initial_input_price, 0, user_input_date); 
     Price* current = head;
@@ -88,30 +85,12 @@ struct Price *generate_price(int initial_input_price, int total_case, float user
         current->next = newNode;
         current = newNode; 
     }
-
-
-    int answer;
-    printf("\nDo you want to print simulation prices?\nConsole [1]\nFile[2]\nChoice: ");
-    scanf("%d", &answer);
-    if (answer == 1) {
-        print_simulation_prices(head, total_case);
-    }else if(answer == 2){
-        write_file_prices(head);
-    }
-
   
-    current = head;
-    while (current != NULL) {
-        Price* temp = current;
-        current = current->next;
-        free(temp);
-    }
 
     return head;
 }
 
-
-void write_file_prices(struct Price *head){
+int write_file_prices(struct Price *head){
     char filename[20];
 
     printf("\nEnter file name(no more than 20 characters): ");
@@ -120,7 +99,7 @@ void write_file_prices(struct Price *head){
     FILE *fp = fopen(filename, "w");
     if(fp == NULL){
         perror("\n:::Can't write the file\n:::");
-        return;
+        return 0;
     }
     Price* current = head;
     int index = 0;
@@ -129,7 +108,7 @@ void write_file_prices(struct Price *head){
         current = current->next;
     }
     printf("\n");
-
+    return 1;
 }
 
 void print_simulation_prices(Price* head, int total_case) {
@@ -140,4 +119,13 @@ void print_simulation_prices(Price* head, int total_case) {
         current = current->next;
     }
     printf("\n");
+}
+
+void free_price_list(Price* head) {
+    Price* current = head;
+    while (current != NULL) {
+        Price* temp = current;
+        current = current->next;
+        free(temp);
+    }
 }
