@@ -22,8 +22,9 @@ int main() {
 
     printf("Enter start date (01-01-2024|08:00): ");
     scanf("%s", user_date);
-    generate_price(price, total_case, user_probability, accelaration, user_date);
+    struct Price *head = generate_price(price, total_case, user_probability, accelaration, user_date);
 	
+
     return 0;
 }
 

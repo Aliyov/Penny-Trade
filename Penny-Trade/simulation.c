@@ -24,7 +24,7 @@ char* generate_new_date(char* date) {
 
     if (hour >= 24) {
         hour -= 24; 
-        day++;
+        day++; 
 
         if ((month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10) && day > 31) {
             day = 1;
@@ -46,8 +46,9 @@ char* generate_new_date(char* date) {
             }
         }
 
-        if (month > 12) {
-            month = 1;
+        if(day==31 && month==12){
+            day=1;
+            month=1;
             year++;
         }
     }
@@ -60,7 +61,7 @@ char* generate_new_date(char* date) {
 
 
 
-void generate_price(int initial_input_price, int total_case, float user_probability, float acceleration, char *user_input_date) {
+struct Price *generate_price(int initial_input_price, int total_case, float user_probability, float acceleration, char *user_input_date) {
     Price* head = create_price_node(initial_input_price, 0, user_input_date); 
     Price* current = head;
     char new_date[DATE];
@@ -90,11 +91,12 @@ void generate_price(int initial_input_price, int total_case, float user_probabil
 
 
     int answer;
-    printf("\nDo you want to print simulation prices? [0-1]: ");
+    printf("\nDo you want to print simulation prices?\nConsole [1]\nFile[2]\nChoice: ");
     scanf("%d", &answer);
-    
     if (answer == 1) {
         print_simulation_prices(head, total_case);
+    }else if(answer == 2){
+        write_file_prices(head);
     }
 
   
@@ -104,8 +106,31 @@ void generate_price(int initial_input_price, int total_case, float user_probabil
         current = current->next;
         free(temp);
     }
+
+    return head;
 }
 
+
+void write_file_prices(struct Price *head){
+    char filename[20];
+
+    printf("\nEnter file name(no more than 20 characters): ");
+    scanf("%s", filename);
+    
+    FILE *fp = fopen(filename, "w");
+    if(fp == NULL){
+        perror("\n:::Can't write the file\n:::");
+        return;
+    }
+    Price* current = head;
+    int index = 0;
+    while (current != NULL) {
+        fprintf(fp, "Price [%d]: %d, Volume: %ld, Date: %s\n", index++, current->price, current->volume, current->date);
+        current = current->next;
+    }
+    printf("\n");
+
+}
 
 void print_simulation_prices(Price* head, int total_case) {
     Price* current = head;
