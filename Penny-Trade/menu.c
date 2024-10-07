@@ -3,6 +3,7 @@
 #include <time.h>
 
 #include "simulation.h"
+#include "firsttactic.h"
 
 void loadLogo(){
     char ch;
@@ -99,11 +100,13 @@ void menu(){
     int choice=0;
     do{
         loadLogo();
-        printf("\t:Menu:\n1. Simulation [1]\n2. Configuration [2]\n3. Exit [3]\n\nChoice: ");
+        printf("\t:Menu:\n1. Simulation [1]\n2. First Tactic [2]\n3. Exit [3]\n\nChoice: ");
         scanf("%d", &choice);
 
         if(choice == 1){
             simulation_menu();
+        }else if(choice == 2){
+           first_tactic_main();
         }
 
     }while(choice != 3);

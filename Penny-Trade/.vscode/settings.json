@@ -57,6 +57,7 @@
   "C_Cpp_Runner.useLinkTimeOptimization": false,
   "C_Cpp_Runner.msvcSecureNoWarnings": false,
   "files.associations": {
-    "simulation.h": "c"
+    "simulation.h": "c",
+    "time.h": "c"
   }
 }

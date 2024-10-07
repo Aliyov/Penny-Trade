@@ -61,7 +61,6 @@ char* generate_new_date(char* date) {
 struct Price *generate_price(int initial_input_price, int total_case, float user_probability, float acceleration, char *user_input_date) {
     Price* head = create_price_node(initial_input_price, 0, user_input_date); 
     Price* current = head;
-    char new_date[DATE];
     srand(time(0));
     float probability = 50.0 + user_probability;
 
@@ -77,7 +76,7 @@ struct Price *generate_price(int initial_input_price, int total_case, float user
         } else {
             new_price = (int)(current_price * (1 - acceleration));
         }
-
+    
         strcpy(user_input_date, generate_new_date(user_input_date));
 
 
@@ -129,3 +128,4 @@ void free_price_list(Price* head) {
         free(temp);
     }
 }
+ 
