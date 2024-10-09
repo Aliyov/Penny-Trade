@@ -3,12 +3,6 @@
 
 #define DATE 20
 
-typedef struct {
-    double price;
-    double quantity;
-    char action[5]; // "buy" or "sell"
-    char date[20];
-} Transaction;
 
 typedef struct {
     double cash;

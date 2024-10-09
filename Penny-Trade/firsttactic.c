@@ -13,7 +13,7 @@ this "t1-10percent.c" file have to do some tasks on that file.
 
 
 ----When market is decreasing----
-1. It has to 
+1. This is complicated dude
  */
 
 #include <stdio.h>
@@ -26,13 +26,6 @@ this "t1-10percent.c" file have to do some tasks on that file.
 #define THRESHOLD_FALL 0.05 // 5% fall threshold
 
 /*
-typedef struct {
-    double price;
-    double quantity;
-    char action[5]; // "buy" or "sell"
-    char date[20];
-} Transaction;
-
 typedef struct {
     double cash;
     double btc;
@@ -69,6 +62,7 @@ void simulate_trading(FILE *inputFile, FILE *logFile) {
     char date[20];
     int price, previousPrice = 0;
     int firstBuy = 1;
+
     while (fscanf(inputFile, "%*s [%*d]: %d, Volume: %*d, Date: %s,", &price, date) != EOF){
         if (firstBuy) {
             // First purchase with 50% of wallet
@@ -111,6 +105,7 @@ void first_tactic_main(){
     printf("\nEnter output filename: ");
     scanf("%s", output_filename);
     FILE *logFile = fopen(output_filename, "w");    
+
     if(logFile == NULL){
         printf("Error writing log data.\n");
         return;
@@ -124,3 +119,4 @@ void first_tactic_main(){
     printf("Done");
     return;
 }
+

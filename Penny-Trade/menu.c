@@ -5,7 +5,7 @@
 #include "simulation.h"
 #include "firsttactic.h"
 
-void loadLogo(){
+void load_menu_Logo(){
     char ch;
     int logoCantLoad=1;
 
@@ -99,7 +99,7 @@ void simulation_menu(){
 void menu(){
     int choice=0;
     do{
-        loadLogo();
+        load_menu_Logo();
         printf("\t:Menu:\n1. Simulation [1]\n2. First Tactic [2]\n3. Exit [3]\n\nChoice: ");
         scanf("%d", &choice);
 
