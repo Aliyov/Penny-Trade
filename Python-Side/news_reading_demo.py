@@ -53,7 +53,7 @@ def main(url):
     print(f"Xeberin xulasesi: {summary}")
 
 # Example usage:
-#news_url = "https://www.channelnewsasia.com/business/softbank-expected-book-187-billion-profit-ipos-4740261"  # Replace with a real news URL
-news_url = "https://www.bbc.com/news/live/cly0gzxgzrmt"
+news_url = "https://www.bbc.co.uk/news/live/czxrnw5qrprt"  # Replace with a real news URL
+#news_url = "https://www.bbc.com/news/live/cly0gzxgzrmt"
 main(news_url)
 
