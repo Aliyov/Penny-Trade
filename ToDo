@@ -1,0 +1,14 @@
+Few things have to be added.
+
+Short term Todo:
+1. I have to check if it is possible to write python code that 
+    clean up firsttactic output which is selling and buying points logs. 
+2. If possible i should run data_cleaner and C codes together in with scripts.
+3. If this is not useful solution then i have to try to write data_cleaner in C also.
+4. I have to find good news API for data collecting for AI model. 
+5. I have to learn how json data works and how python interracts with it.
+6. If news part somehow work then it would be good practice to send news telegram bot. 
+7. And if possible in near future user will accept if news should affect probability or not.
+
+
+   
