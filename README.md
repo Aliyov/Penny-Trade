@@ -21,12 +21,16 @@ The system not only analyzes current prices but also integrates and adapts to re
   4. Start date for price generation. 
   5. Name of the simulation output file.  
 
-![Screenshot From 2024-11-16 23-18-29](https://github.com/user-attachments/assets/9ff0e5ea-d3a4-4297-8631-d0da8d32c293)
+**Interface**
+![Screenshot From 2024-11-16 23-17-31](https://github.com/user-attachments/assets/e101959f-53be-47c2-b315-377984f20ab7)
 
+**Simulation Interface**
 ![Screenshot From 2024-11-16 23-17-06](https://github.com/user-attachments/assets/b53412e5-27e2-4dc6-93f2-47f6e2d6db2c)
 
+**Simulation output**
 ![Screenshot From 2024-11-16 23-18-29](https://github.com/user-attachments/assets/1ce6d3f8-668d-43ad-a905-37cd17997594)
 
+**After applying mathematical function**
 ![Screenshot From 2024-11-16 23-20-26](https://github.com/user-attachments/assets/1fa0d4b2-9a9a-456a-96c0-7604e1a763c7)
 
 
