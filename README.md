@@ -17,8 +17,18 @@ The system not only analyzes current prices but also integrates and adapts to re
 - User-defined variables in this version include:  
   1. Number of price points to be generated.  
   2. Probability of price increase or decrease.  
-  3. Start date for price generation.  
-  4. Name of the simulation output file.  
+  3. Price gap between points. (if set to 200 and initial point is 62200 next possible output either 62400 or 6200).
+  4. Start date for price generation. 
+  5. Name of the simulation output file.  
+
+![Screenshot From 2024-11-16 23-18-29](https://github.com/user-attachments/assets/9ff0e5ea-d3a4-4297-8631-d0da8d32c293)
+
+![Screenshot From 2024-11-16 23-17-06](https://github.com/user-attachments/assets/b53412e5-27e2-4dc6-93f2-47f6e2d6db2c)
+
+![Screenshot From 2024-11-16 23-18-29](https://github.com/user-attachments/assets/1ce6d3f8-668d-43ad-a905-37cd17997594)
+
+![Screenshot From 2024-11-16 23-20-26](https://github.com/user-attachments/assets/1fa0d4b2-9a9a-456a-96c0-7604e1a763c7)
+
 
 ### News Analysis Features (Python Code)  
 - Automatically fetches and analyzes news content using a free-tier API.  
@@ -33,6 +43,9 @@ The system not only analyzes current prices but also integrates and adapts to re
      - Example: `0.9345` (Highly Reliable), `0.2102` (Unreliable)  
   3. Summary of the news content.  
 - News links are processed automatically, requiring minimal manual input.  
+
+
+![Screenshot From 2024-11-16 23-42-09](https://github.com/user-attachments/assets/680ae13f-eb24-4d4b-9c35-d8022c9e7d15)
 
 ---
 
