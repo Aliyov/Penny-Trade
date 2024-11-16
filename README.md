@@ -1,25 +1,56 @@
-# PennyTrade Current Version (in build)
+# PennyTrade  
+**Current Version: v1.2 (in development)**  
 
-## Description
-This trading app simulates price changes based on user-defined probabilities and accelerations. 
-Users can input an initial price, the number of simulation cases, and adjust probabilities to 
-generate and visualize potential future prices.
+## Purpose of this Project  
+PennyTrade is a program designed to use optimized algorithmic structures and mathematically analyzed functions to simulate realistic stock market price behaviors. These simulations consider both the most recent news and user-defined variables.  
 
-## Features
-- Simulate price movements with user-defined probabilities.
-- Generate a series of price changes based on the initial price.
-- Print detailed price changes along with percentage changes from the initial price.
+For each simulation, the program identifies optimal buy and sell points. While doing so, it generates mathematical functions that serve as the foundation for subsequent simulations. As the number of simulations increases, the algorithm improves its accuracy through iterative learning.  
 
-### Prerequisites 
-- A C compiler (e.g., GCC)
-- Make sure you have `git` installed.
+The system not only analyzes current prices but also integrates and adapts to real-time news updates. The primary goal is not to generate profit but to develop algorithms capable of solving and modeling highly unpredictable and complex scenarios, similar to chess—but on an infinite board where a pawn can transform into a queen.  
 
-### Windows users just clone and run it any IDE.
+---
 
-### Linux users clone the repository
-git clone <repository-url>
-cd <repository-name>
-gcc main.c simulation.c -o trading
-./trading
+## Features in Version 1.2  
 
+### Simulation Features (C Code)  
+- Generates a large number of simulations based on user-defined variables.  
+- User-defined variables in this version include:  
+  1. Number of price points to be generated.  
+  2. Probability of price increase or decrease.  
+  3. Start date for price generation.  
+  4. Name of the simulation output file.  
+
+### News Analysis Features (Python Code)  
+- Automatically fetches and analyzes news content using a free-tier API.  
+- News analysis results include:  
+  1. Sentiment score (1 to 5):  
+     - **1**: Strongly Negative  
+     - **2**: Negative  
+     - **3**: Neutral  
+     - **4**: Positive  
+     - **5**: Strongly Positive  
+  2. Reliability score (0 to 1):  
+     - Example: `0.9345` (Highly Reliable), `0.2102` (Unreliable)  
+  3. Summary of the news content.  
+- News links are processed automatically, requiring minimal manual input.  
+
+---
+
+## Technologies Used  
+- **Algorithms and Data Structures:** Core logic implemented in C.  
+- **Machine Learning (ML):** Utilized Python and the `BART` model for news analysis and sentiment scoring.  
+- **Mathematical Analysis:** Key functions and algorithms written in C for precise control and performance.  
+
+---
+
+## How to Run the Program
+
+## Python side  
+- The output of the "first tactic" function in version 1.2 is messy and requires additional cleaning, handled by a separate Python script.  
+- The Python-based news analysis requires significant dependencies (gigabytes in size), making it challenging for widespread deployment in its current state.  
+
+### C Code  
+1. Ensure you have a C compiler and `make` installed.  
+2. Navigate to the directory containing the source files.  
+3. Execute makefile.  
 
