@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <unistd.h>
 #include <string.h>
 
 #include "simulation.h"
@@ -8,7 +9,7 @@
 
 Price* create_price_node(int price, long int volume,char* date) {
     Price* newNode = (Price*)malloc(sizeof(Price));
-    newNode->price = price;
+    newNode->stdout_price = price;
     newNode->volume = volume;
     strcpy(newNode->date, date);
     newNode->next = NULL; 
@@ -58,23 +59,24 @@ char* generate_new_date(char* date) {
     return new_date;
 }
 
-struct Price *generate_price(int initial_input_price, int total_case, float user_probability, float acceleration, char *user_input_date) {
+struct Price *generate_price(int initial_input_price, int total_case, float initial_user_probability, float initial_user_acceleration, char *user_input_date) {
     Price* head = create_price_node(initial_input_price, 0, user_input_date); 
     Price* current = head;
+
     srand(time(0));
-    float probability = 50.0 + user_probability;
+    float probability = 50.0 + initial_user_probability;
 
     for (int i = 1; i < total_case; i++) {
-        int current_price = current->price;
+        int current_price = current->stdout_price;
 
         float random_price = (float)(rand() % 100);
 
       
         int new_price;
         if (random_price < probability) {
-            new_price = (int)(current_price * (1 + acceleration));
+            new_price = (int)(current_price * (1 + initial_user_acceleration));
         } else {
-            new_price = (int)(current_price * (1 - acceleration));
+            new_price = (int)(current_price * (1 - initial_user_acceleration));
         }
     
         strcpy(user_input_date, generate_new_date(user_input_date));
@@ -103,7 +105,7 @@ int write_file_prices(struct Price *head){
     Price* current = head;
     int index = 0;
     while (current != NULL) {
-        fprintf(fp, "Price [%d]: %d, Volume: %ld, Date: %s\n", index++, current->price, current->volume, current->date);
+        fprintf(fp, "Price [%d]: %d, Volume: %ld, Date: %s\n", index++, current->stdout_price, current->volume, current->date);
         current = current->next;
     }
     printf("\n");
@@ -114,11 +116,12 @@ void print_simulation_prices(Price* head, int total_case) {
     Price* current = head;
     int index = 0;
     while (current != NULL) {
-        printf("Price [%d]: %d, Volume: %ld, Date: %s\n", index++, current->price, current->volume, current->date);
+        printf("Price [%d]: %d, Volume: %ld, Date: %s\n", index++, current->stdout_price, current->volume, current->date);
         current = current->next;
     }
-    printf("\n");
+    sleep(5);
 }
+    
 
 void free_price_list(Price* head) {
     Price* current = head;

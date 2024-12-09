@@ -45,15 +45,16 @@ def main(url):
     sentiment_result = analyze_sentiment(truncated_text)
     score = score_sentiment(sentiment_result)
 
-    # Summarize the article
-    summary = summarize_text(truncated_text)
-    print("Qiymetlendirme\n1-Cox pis\n2-Pis\n3-Neytral\n4-Yaxsi\n5-Cox yaxsi\n")
-    print(f"Qiymetlendirme (5 uzerinden): {score}")
-    print(f"Melumatin deqiqliyi: {sentiment_result}")
-    print(f"Xeberin xulasesi: {summary}")
 
-# Example usage:
-news_url = "https://www.bbc.co.uk/news/live/czxrnw5qrprt"  # Replace with a real news URL
+    summary = summarize_text(truncated_text)
+    print("Scoring\n1-Strongly Negative\n2-Negative\n3-Neutral\n4-Positive\n5-Strongly Positive\n")
+    print(f"Scoring (out of 5): {score}")
+    print(f"Reliability: {sentiment_result}")
+    print(f"Summarization: {summary}")
+
+
+news_url = "https://www.politifact.com/article/2024/oct/14/a-third-assassination-attempt-against-trump-heres/"  # Replace with a real news URL
 #news_url = "https://www.bbc.com/news/live/cly0gzxgzrmt"
+#news_url = "https://www.theguardian.com/world/2024/nov/25/dhl-cargo-plane-crashes-near-lithuania-airport"
 main(news_url)
 

@@ -1,19 +1,12 @@
-from transformers import pipeline
+import os
+import logging
 import requests
 from time import sleep
+from transformers import pipeline
+import json
+import time
 
-# Define GPT-2 generator
-gpt2_generator = pipeline("text-generation", model="gpt2")
-
-# Function to generate text (or simulate a summary) using GPT-2
-def generate_text(prompt):
-    return gpt2_generator(prompt, max_length=100, num_return_sequences=1)[0]["generated_text"]
-
-# Function to generate a summary with GPT-2
-def summarize_with_gpt2(text):
-    prompt = f"Summarize the following news article:\n\n{text}\n\nSummary:"
-    return generate_text(prompt)
-
+# Sentiment analysis and summarization functions
 def fetch_news_article(url):
     try:
         response = requests.get(url)
@@ -26,6 +19,21 @@ def fetch_news_article(url):
 def truncate_text(text, max_tokens=512):
     return text[:max_tokens]
 
+def analyze_sentiment(text):
+    sentiment_model = pipeline("sentiment-analysis", model="nlptown/bert-base-multilingual-uncased-sentiment")
+    result = sentiment_model(text)
+    return result
+
+def summarize_text(text):
+    summarizer = pipeline("summarization", model="sshleifer/distilbart-cnn-12-6")
+    summary = summarizer(text, max_length=80, min_length=50, do_sample=False)
+    return summary[0]['summary_text']
+
+def score_sentiment(sentiment_result):
+    label = sentiment_result[0]["label"]
+    score = int(label.split()[0])  # Assuming the label is in the format like '4 stars'
+    return score
+
 def main(url):
     article_text = fetch_news_article(url)
     if not article_text:
@@ -34,18 +42,26 @@ def main(url):
 
     truncated_text = truncate_text(article_text)
 
-    # Generate a GPT-2-based summary
-    summary = summarize_with_gpt2(truncated_text)
+    sentiment_result = analyze_sentiment(truncated_text)
+    score = score_sentiment(sentiment_result)
 
-    print(f"GPT-2 Generated Summary: {summary}")
+    summary = summarize_text(truncated_text)
+
+    print(f"Sentiment Score (out of 5): {score}")
+    print(f"Sentiment Analysis Details: {sentiment_result}")
+    print(f"Summarize: {summary}")
     print(url)
 
 def fetch_news_data(api_key, url):
     try:
+        # Make a GET request to the URL
         response = requests.get(url)
-        response.raise_for_status()
+        response.raise_for_status()  # Check for any request errors
+
+        # Extract the JSON content from the response
         data = response.json()
 
+        # Check if 'results' key exists and process the links
         if data.get("results"):
             links = [article.get("link") for article in data["results"] if article.get("link")]
             if links:
@@ -59,17 +75,13 @@ def fetch_news_data(api_key, url):
     except requests.exceptions.RequestException as e:
         print(f"Error fetching news: {e}")
 
-def callMain2():
+
+def callMain():
     api_key = "pub_58917cdb453f9da429d45bd3e56b11450dc11"
     query_url = f"https://newsdata.io/api/1/news?apikey={api_key}&country=il,ua&language=en&category=business"
     
     while True:
         fetch_news_data(api_key, query_url)
-        sleep(30)  # Sleep for 30 seconds for testing (5 minutes in production)
+        sleep(30)  # sleep
 
-def callMain():
-    demo_url = "https://www.bbc.co.uk/news/live/czxrnw5qrprt"
-    fetch_news_article(demo_url)
-
-# Example usage
 callMain()

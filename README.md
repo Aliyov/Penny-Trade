@@ -6,7 +6,7 @@ PennyTrade is a program designed to use optimized algorithmic structures and mat
 
 For each simulation, the program identifies optimal buy and sell points. While doing so, it generates mathematical functions that serve as the foundation for subsequent simulations. As the number of simulations increases, the algorithm improves its accuracy through iterative learning.  
 
-The system not only analyzes current prices but also integrates and adapts to real-time news updates. The primary goal is not to generate profit but to develop algorithms capable of solving and modeling highly unpredictable and complex scenarios, similar to chess—but on an infinite board where a pawn can transform into a queen.  
+The system not only analyzes current prices but also integrates and adapts to real-time news updates. The primary goal is not to generate profit but to develop algorithms capable of solving and modeling highly unpredictable and complex scenarios, similar to chess—but on an infinite board where a pawn can transform into a queen without reaching end of the board.  
 
 ---
 
@@ -17,8 +17,9 @@ The system not only analyzes current prices but also integrates and adapts to re
 - User-defined variables in this version include:  
   1. Number of price points to be generated.  
   2. Probability of price increase or decrease.  
-  3. Start date for price generation.  
-  4. Name of the simulation output file.  
+  3. Price gap between points. (if set to 200 and initial point is 62200 next possible output either 62400 or 6200).
+  4. Start date for price generation. 
+  5. Name of the simulation output file.  
 
 ### News Analysis Features (Python Code)  
 - Automatically fetches and analyzes news content using a free-tier API.  
@@ -48,8 +49,8 @@ The system not only analyzes current prices but also integrates and adapts to re
 ## Python side  
 - The output of the "first tactic" function in version 1.2 is messy and requires additional cleaning, handled by a separate Python script.  
 - The Python-based news analysis requires significant dependencies (gigabytes in size), making it challenging for widespread deployment in its current state.  
-
-### C Code  
+  **FOR THIS REASON I AM NOT ADVISING TRYING TO RUN PYTHON APPLICATIONS IN THIS VERSION V1.2**
+### C side 
 1. Ensure you have a C compiler and `make` installed.  
 2. Navigate to the directory containing the source files.  
 3. Execute makefile.  

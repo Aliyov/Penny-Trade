@@ -4,7 +4,7 @@
 #define DATE 20
 
 typedef struct Price {
-    int price;
+    int stdout_price;
     long int volume;
     char date[DATE];
     struct Price* next; 

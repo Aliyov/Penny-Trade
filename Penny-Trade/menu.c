@@ -53,30 +53,31 @@ void menu_sleep(int seconds) {
 }
 
 void simulation_menu(){
-    int price, total_case;
-    float user_probability, acceleration;
-    char  user_date[DATE];
+    int initial_user_price, total_case;
+    float initial_user_probability, initial_user_acceleration;
+    char  initial_user_date[DATE];
 
     simulation_logo();
 
     printf("\nEnter initial price: ");
-    scanf("%d", &price);
+    scanf("%d", &initial_user_price);
 
     printf("Enter total simulation cases: ");
     scanf("%d", &total_case);
 
     printf("Enter probability of increase: ");
-    scanf("%f", &user_probability);
+    scanf("%f", &initial_user_probability);
 
     printf("Enter acceleration factor (percentage, e.g., 0.03 for 3%%): ");
-    scanf("%f", &acceleration);
+    scanf("%f", &initial_user_acceleration);
 
     printf("Enter start date (01-01-2024|08:00): ");
-    scanf("%s", user_date);
+    scanf("%s", initial_user_date);
 
     printf("\nAll set! ^_^");
 
-    Price *head_list = generate_price(price, total_case, user_probability, acceleration, user_date);
+    //generate_price function defined in 'simulation.c' 
+    Price *head_list = generate_price(initial_user_price, total_case, initial_user_probability, initial_user_acceleration, initial_user_date);
 
     int answer;
     printf("\n\nWhere do you want to print simulation prices?\nConsole [1]\nFile[2]\n\nChoice o_O: ");

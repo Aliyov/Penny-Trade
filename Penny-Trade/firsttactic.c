@@ -1,39 +1,13 @@
-/*After running simulation we get a file which has prices and information about that price
-this "t1-10percent.c" file have to do some tasks on that file.
-    
-----When market is rising----
-1. It has take each price and initialize 2 different variable: A) buyPrice B) selPrice
-2. Function has to make purchase with 50% wallet, that pruchase value have to be stored as 'buyPrice'.
-3. That price has to store quantity of product and date of purchase.
-4. If the current price is greater than 'buyPrice' 10% it should sell 75% of stock, and label
-   rest of the stock 'buyPriceNegative'.
-5. If market price keep rising and current price is greater than 'buyPriceNegative' 20% ,
-   it should sell all stocks and label selling point as 'selPrice'.
-6. If current price is less than 'selPrice' 10%, it should buy 50% of amount.
-
-
-----When market is decreasing----
-1. This is complicated dude
- */
-
 #include <stdio.h>
 #include <stdlib.h>
-
+#include <string.h>
+#include <time.h>
 #include "firsttactic.h"
 
 #define INITIAL_WALLET 200.0
 #define THRESHOLD_RISE 0.10 // 10% rise threshold
 #define THRESHOLD_FALL 0.05 // 5% fall threshold
 
-/*
-typedef struct {
-    double cash;
-    double btc;
-    double buyPrice;
-    double sellPrice;
-} Wallet;
-
-*/
 
 void buy(Wallet *wallet, double price, double percent, const char *date, FILE *logFile) {
     double amountToSpend = wallet->cash * percent;
@@ -42,8 +16,9 @@ void buy(Wallet *wallet, double price, double percent, const char *date, FILE *l
     wallet->btc += quantityBought;
     wallet->cash -= amountToSpend;
     wallet->buyPrice = price;
+    strcpy(wallet->date, date);
 
-    fprintf(logFile, "BUY: $%.2f of BTC at $%.2f on %s. Quantity: %.6f BTC\n", amountToSpend, price, date, quantityBought);
+    fprintf(logFile, "BUY: $%.2f of BTC at $%.2f on %s. Quantity: %.6f BTC\n", amountToSpend, price, wallet->date, quantityBought);
 }
 
 void sell(Wallet *wallet, double price, double percent, const char *date, FILE *logFile) {
@@ -53,7 +28,6 @@ void sell(Wallet *wallet, double price, double percent, const char *date, FILE *
     wallet->btc -= amountToSell;
     wallet->cash += cashGained;
     wallet->sellPrice = price;
-
     fprintf(logFile, "SELL: %.6f BTC at $%.2f on %s. Cash gained: $%.2f\n", amountToSell, price, date, cashGained);
 }
 

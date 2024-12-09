@@ -9,6 +9,7 @@ typedef struct {
     double btc;
     double buyPrice;
     double sellPrice;
+    char date[20];
 } Wallet;
 
 void buy(Wallet *wallet, double price, double percent, const char *date, FILE *logFile);
