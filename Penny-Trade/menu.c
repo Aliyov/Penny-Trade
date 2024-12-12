@@ -3,7 +3,8 @@
 #include <time.h>
 
 #include "simulation.h"
-#include "firsttactic.h"
+#include "tacticalX.h"
+#include "visual.h"
 
 void load_menu_Logo(){
     char ch;
@@ -13,7 +14,7 @@ void load_menu_Logo(){
         printf("\n");
     }
 
-    FILE *fp = fopen("./Logos/tradeLogo.txt", "r");
+    FILE *fp = fopen("./Logos/trade_logo.txt", "r");
     if(fp == NULL){
         printf("\n:::LOGO CANT LOAD:::\n:::NO PROBLEM YOU CAN USE IT ANYWAYS:::\n");
         logoCantLoad=0;
@@ -46,6 +47,47 @@ void simulation_logo(){
         printf("\n");
     }
 }
+
+void visualization_logo(){
+    char ch;
+    int logoCantLoad=1;
+    for(int i=0; i<60;i++){
+        printf("\n");
+    }
+    FILE *fp = fopen("./Logos/visualization_logo.txt", "r");
+    if(fp == NULL){
+        printf("\n:::LOGO CANT LOAD:::\n:::NO PROBLEM YOU CAN USE IT ANYWAYS:::\n");
+        logoCantLoad=0;
+    }
+
+    if(logoCantLoad == 1){
+        while(fscanf(fp, "%c", &ch)!= EOF){
+        printf("%c",ch);
+        }
+        printf("\n");
+    }
+}
+
+void tacticalX_logo(){
+    char ch;
+    int logoCantLoad=1;
+    for(int i=0; i<60;i++){
+        printf("\n");
+    }
+    FILE *fp = fopen("./Logos/tacticalX_logo.txt", "r");
+    if(fp == NULL){
+        printf("\n:::LOGO CANT LOAD:::\n:::NO PROBLEM YOU CAN USE IT ANYWAYS:::\n");
+        logoCantLoad=0;
+    }
+
+    if(logoCantLoad == 1){
+        while(fscanf(fp, "%c", &ch)!= EOF){
+        printf("%c",ch);
+        }
+        printf("\n");
+    }
+}
+
 
 void menu_sleep(int seconds) {
     clock_t start_time = clock();
@@ -101,14 +143,18 @@ void menu(){
     int choice=0;
     do{
         load_menu_Logo();
-        printf("\t:Menu:\n1. Simulation [1]\n2. First Tactic [2]\n3. Exit [3]\n\nChoice: ");
+        printf("\t:Menu:\n1. Simulation [1]\n2. Tactical X [2]\n3. Visualization [3]\n4. Exit [4]\n\nChoice: ");
         scanf("%d", &choice);
 
         if(choice == 1){
             simulation_menu();
         }else if(choice == 2){
+           tacticalX_logo(); 
            first_tactic_main();
+        }else if(choice ==3){
+            visualization_logo();
+            visualization();
         }
 
-    }while(choice != 3);
+    }while(choice != 4);
 }

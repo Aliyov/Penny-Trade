@@ -1,5 +1,5 @@
-#ifndef FIRSTTACTIC_H
-#define FIRSTTACTIC_H
+#ifndef TACTICALX_H
+#define TACTICALX_H
 
 #define DATE 20
 

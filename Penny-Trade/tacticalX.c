@@ -2,7 +2,8 @@
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
-#include "firsttactic.h"
+
+#include "tacticalX.h"
 
 #define INITIAL_WALLET 200.0
 #define THRESHOLD_RISE 0.10 // 10% rise threshold
