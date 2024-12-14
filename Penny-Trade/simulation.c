@@ -96,12 +96,16 @@ int write_file_prices(struct Price *head){
 
     printf("\nEnter file name(no more than 20 characters): ");
     scanf("%s", filename);
-    
-    FILE *fp = fopen(filename, "w");
+
+    char full_path[100];  // Allocate space for the full path
+    snprintf(full_path, sizeof(full_path), "../SimulationPool/%s", filename); // Update path
+
+    FILE *fp = fopen(full_path, "w"); // Open file with full path
     if(fp == NULL){
         perror("\n:::Can't write the file\n:::");
         return 0;
     }
+
     Price* current = head;
     int index = 0;
     while (current != NULL) {
@@ -111,6 +115,7 @@ int write_file_prices(struct Price *head){
     printf("\n");
     return 1;
 }
+
 
 void print_simulation_prices(Price* head, int total_case) {
     Price* current = head;

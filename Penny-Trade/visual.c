@@ -8,7 +8,7 @@
 #include "visual.h"
 
 void visualization(){
-    get_files();
+    get_files_for_visualization();
 
     char *filename = get_filename();
 
@@ -16,7 +16,7 @@ void visualization(){
     if (pid == 0) {
         // Child process: Run the Python script with the filename as an argument
         char command[512];
-        snprintf(command, sizeof(command), "python3 ../Visualization/visual.py ../Visualization/%s", filename);
+        snprintf(command, sizeof(command), "python3 ../Visualization/visual.py ../SimulationPool/%s", filename);
         printf("Child process: Running visualization with file '%s'...\n", filename);
         int result = system(command);
         if (result != 0) {
@@ -35,8 +35,8 @@ void visualization(){
     }
 }
 
-void get_files() {
-    const char *directory = "../Visualization/";  // Initialize the directory path
+void get_files_for_visualization() {
+    const char *directory = "../SimulationPool/";  // Initialize the directory path
     struct dirent *entry;
     DIR *dp = opendir(directory);
 
@@ -45,7 +45,7 @@ void get_files() {
         return;
     }
 
-    printf("  Available .txt files in directory '%s':\n", directory);
+    printf("  Available 'SIMULATION'.txt files in directory for graph visualization '%s':\n", directory);
     while ((entry = readdir(dp)) != NULL) {
         // Check if the file has a .txt extension
         if (strstr(entry->d_name, ".txt") != NULL) {

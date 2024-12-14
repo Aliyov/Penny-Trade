@@ -1,6 +1,24 @@
 import sys
 import re
 import plotly.graph_objects as go
+import numpy as np
+
+def calculate_sma(prices, window_length):
+    """Helper function to calculate Simple Moving Average (SMA)."""
+    return np.convolve(prices, np.ones(window_length) / window_length, mode='valid')
+
+def plot_custom_moving_averages(prices, ma200_length=200, ma30_length=17):
+    """Plots custom moving averages and their modified versions."""
+    
+    # Calculate moving averages
+    ma100 = calculate_sma(prices, ma200_length)
+    ma30 = calculate_sma(prices, ma30_length)
+    
+    # Calculate modified moving averages
+    ma100_div2 = ma100 / 1.1
+    ma100_mul2 = ma100 * 1.1
+    
+    return ma100_div2, ma100_mul2, ma30
 
 def visualize_prices(filename):
     try:
@@ -23,6 +41,9 @@ def visualize_prices(filename):
         # Prepare the data for plotting
         x = list(range(1, len(prices) + 1))
 
+        # Calculate the moving averages
+        ma100_div2, ma100_mul2, ma30 = plot_custom_moving_averages(prices)
+
         # Create the figure
         fig = go.Figure()
 
@@ -42,9 +63,23 @@ def visualize_prices(filename):
                     mode='lines', line=dict(color='red'), showlegend=False
                 ))
 
+        # Plot the moving averages
+        fig.add_trace(go.Scatter(
+            x=x[200-1:], y=ma100_div2, mode='lines', line=dict(color='blue', width=2),
+            name="MA 100 Divided by 1.1"
+        ))
+        fig.add_trace(go.Scatter(
+            x=x[200-1:], y=ma100_mul2, mode='lines', line=dict(color='red', width=2),
+            name="MA 100 Multiplied by 1.1"
+        ))
+        fig.add_trace(go.Scatter(
+            x=x[17-1:], y=ma30, mode='lines', line=dict(color='green', width=2),
+            name="MA 30"
+        ))
+        
         # Add title and labels
         fig.update_layout(
-            title='Price Trend Visualization',
+            title='Price Trend Visualization with Custom Moving Averages',
             xaxis_title='Data Index',
             yaxis_title='Prices',
             template='plotly_dark'  # Dark background for better contrast
