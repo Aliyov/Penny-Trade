@@ -139,5 +139,3 @@ void first_tactic_main() {
     printf("Done.\n");
     return;
 }
-
-
