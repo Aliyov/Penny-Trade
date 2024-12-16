@@ -11,14 +11,14 @@ def plot_custom_moving_averages(prices, ma200_length=200, ma30_length=17):
     """Plots custom moving averages and their modified versions."""
     
     # Calculate moving averages
-    ma100 = calculate_sma(prices, ma200_length)
+    ma200 = calculate_sma(prices, ma200_length)
     ma30 = calculate_sma(prices, ma30_length)
     
     # Calculate modified moving averages
-    ma100_div2 = ma100 / 1.1
-    ma100_mul2 = ma100 * 1.1
+    ma200_div2 = ma200 / 1.1
+    ma200_mul2 = ma200 * 1.1
     
-    return ma100_div2, ma100_mul2, ma30
+    return ma200_div2, ma200_mul2, ma30
 
 def visualize_prices(filename):
     try:
@@ -42,7 +42,7 @@ def visualize_prices(filename):
         x = list(range(1, len(prices) + 1))
 
         # Calculate the moving averages
-        ma100_div2, ma100_mul2, ma30 = plot_custom_moving_averages(prices)
+        ma200_div2, ma200_mul2, ma30 = plot_custom_moving_averages(prices)
 
         # Create the figure
         fig = go.Figure()
@@ -65,11 +65,11 @@ def visualize_prices(filename):
 
         # Plot the moving averages
         fig.add_trace(go.Scatter(
-            x=x[200-1:], y=ma100_div2, mode='lines', line=dict(color='blue', width=2),
+            x=x[200-1:], y=ma200_div2, mode='lines', line=dict(color='blue', width=2),
             name="MA 100 Divided by 1.1"
         ))
         fig.add_trace(go.Scatter(
-            x=x[200-1:], y=ma100_mul2, mode='lines', line=dict(color='red', width=2),
+            x=x[200-1:], y=ma200_mul2, mode='lines', line=dict(color='red', width=2),
             name="MA 100 Multiplied by 1.1"
         ))
         fig.add_trace(go.Scatter(
@@ -77,6 +77,8 @@ def visualize_prices(filename):
             name="MA 30"
         ))
         
+        
+
         # Add title and labels
         fig.update_layout(
             title='Price Trend Visualization with Custom Moving Averages',
