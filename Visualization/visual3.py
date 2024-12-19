@@ -5,7 +5,11 @@ import sys
 
 def calculate_sma(prices, window_length):
     """Helper function to calculate Simple Moving Average (SMA)."""
-    return np.convolve(prices, np.ones(window_length) / window_length, mode='valid')
+    sma = np.convolve(prices, np.ones(window_length) / window_length, mode='valid')
+    
+    # Pad the moving average with None to align with the original array length
+    pad_length = len(prices) - len(sma)
+    return [None] * pad_length + list(sma)
 
 def three_musketeers_indicator(prices, ma200_length=200, ma30_length=17):
     """Implements the Three Musketeers trading logic."""
@@ -14,8 +18,8 @@ def three_musketeers_indicator(prices, ma200_length=200, ma30_length=17):
     ma30 = calculate_sma(prices, ma30_length)
 
     # Adjusted moving averages
-    ma200_div2 = ma200 / 1.1
-    ma200_mul2 = ma200 * 1.1
+    ma200_div2 = [x / 1.1 if x is not None else None for x in ma200]
+    ma200_mul2 = [x * 1.1 if x is not None else None for x in ma200]
 
     return ma200_div2, ma200_mul2, ma30
 
@@ -56,14 +60,18 @@ def visualize_prices_with_trading_logic(filename):
         plt.plot(x, prices, label="Price", color='white', alpha=0.5)
 
         # Plot moving averages
-        plt.plot(x[len(x)-len(ma200_div2):], ma200_div2, label="MA 200 Divided by 1.1", color='blue', linewidth=2)
-        plt.plot(x[len(x)-len(ma200_mul2):], ma200_mul2, label="MA 200 Multiplied by 1.1", color='red', linewidth=2)
-        plt.plot(x[len(x)-len(ma30):], ma30, label="MA 30", color='green', linewidth=2)
+        plt.plot(x, ma200_div2, label="MA 200 Divided by 1.1", color='blue', linewidth=2)
+        plt.plot(x, ma200_mul2, label="MA 200 Multiplied by 1.1", color='red', linewidth=2)
+        plt.plot(x, ma30, label="MA 30", color='green', linewidth=2)
 
         # Trading logic
         for i in range(1, len(prices)):
             if i >= len(ma200_div2) or i >= len(ma30):
                 break
+
+            # Skip comparison if either moving average is None
+            if ma30[i] is None or ma200_div2[i] is None or ma30[i - 1] is None or ma200_div2[i - 1] is None:
+                continue
 
             # BUY signal
             if ma30[i] > ma200_div2[i] and ma30[i - 1] <= ma200_div2[i - 1]:
