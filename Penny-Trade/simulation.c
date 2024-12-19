@@ -124,7 +124,7 @@ void print_simulation_prices(Price* head, int total_case) {
         printf("Price [%d]: %d, Volume: %ld, Date: %s\n", index++, current->stdout_price, current->volume, current->date);
         current = current->next;
     }
-    sleep(5);
+    sleep(2);
 }
     
 

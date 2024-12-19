@@ -10,13 +10,13 @@
 void visualization(){
     get_files_for_visualization();
 
-    char *filename = get_filename();
+    char *filename = get_filename(); 
 
     pid_t pid = fork(); // Create a child process
     if (pid == 0) {
         // Child process: Run the Python script with the filename as an argument
         char command[512];
-        snprintf(command, sizeof(command), "python3 ../Visualization/visual2.py ../SimulationPool/%s", filename);
+        snprintf(command, sizeof(command), "python3 ../Visualization/visual3.py ../SimulationPool/%s", filename);
         printf("Child process: Running visualization with file '%s'...\n", filename);
         int result = system(command);
         if (result != 0) {

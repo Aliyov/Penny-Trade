@@ -143,7 +143,7 @@ void menu(){
     int choice=0;
     do{
         load_menu_Logo();
-        printf("\t:Menu:\n1. Simulation [1]\n2. Tactical X [2]\n3. Visualization [3]\n4. Exit [4]\n\nChoice: ");
+        printf("\t:Menu:\n1. Simulation [1]\n2. Tactical X [2]\n3. Visualization [3]\n4. Exit [4]\n\n\nChoice: ");
         scanf("%d", &choice);
 
         if(choice == 1){

@@ -5,13 +5,13 @@ CC = gcc
 CFLAGS = -Wall -g
 
 # Source files
-SRCS = main.c menu.c simulation.c tacticalX.c visual.c
+SRCS = main.c menu.c simulation.c tacticalX.c visual.c 
 
 # Object files (Correct this to create .o files, not .c)
 OBJS = $(SRCS:.c=.o)
 
 # Header files (for dependencies)
-DEPS = menu.h simulation.h tacticalX.h visualization.h
+DEPS = menu.h simulation.h tacticalX.h visualization.h 
 
 # Output executable name
 TARGET = trade_app
