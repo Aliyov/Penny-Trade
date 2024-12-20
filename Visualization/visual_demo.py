@@ -1,27 +1,50 @@
+import sys
+import re
 import numpy as np
 import matplotlib.pyplot as plt
-import re
-import sys
 
-def calculate_sma(prices, window_length):
-    """Helper function to calculate Simple Moving Average (SMA)."""
-    sma = np.convolve(prices, np.ones(window_length) / window_length, mode='valid')
-    
-    # Pad the moving average with None to align with the original array length
-    pad_length = len(prices) - len(sma)
-    return [None] * pad_length + list(sma)
+def calculate_long_MA(prices, window_length, mul_val):
+    if len(prices) < window_length:
+        raise ValueError("Not enough data")
 
-def three_musketeers_indicator(prices, ma200_length=200, ma30_length=17):
-    """Implements the Three Musketeers trading logic."""
-    # Calculate moving averages
-    ma200 = calculate_sma(prices, ma200_length)
-    ma30 = calculate_sma(prices, ma30_length)
+    long_ma = []
+    sum_prices = 0
+    upper_border = []
+    down_border = []
 
-    # Adjusted moving averages
-    ma200_div2 = [x / 1.1 if x is not None else None for x in ma200]
-    ma200_mul2 = [x * 1.1 if x is not None else None for x in ma200]
+    for i in range(len(prices)):
+        if i < window_length:
+            # Sum up the first `window_length` elements
 
-    return ma200_div2, ma200_mul2, ma30
+            sum_prices += prices[i]
+            long_ma.append(prices[i])
+            
+        else:
+            # Calculate the moving average
+            sum_prices += prices[i] - prices[i - window_length]
+            long_ma.append(sum_prices / window_length)
+            
+        upper_border.append(round(long_ma[-1] * mul_val, 2))
+        down_border.append(round(long_ma[-1] / mul_val, 2))
+
+    return long_ma, upper_border, down_border
+
+def calculate_short_MA(prices, window_length):
+    if len(prices) < window_length:
+        raise ValueError("Not enough data")
+
+    short_ma = []
+    sum_prices = 0
+
+    for i in range(len(prices)):
+        if i < window_length:
+            sum_prices += prices[i]
+            short_ma.append(prices[i])
+        else:
+            sum_prices += prices[i] - prices[i - window_length]
+            short_ma.append(sum_prices / window_length)
+
+    return short_ma
 
 def visualize_prices_with_trading_logic(filename):
     try:
@@ -39,72 +62,56 @@ def visualize_prices_with_trading_logic(filename):
             print("No prices found in the file.")
             return
 
-        # Prepare data for plotting
         x = list(range(1, len(prices) + 1))
 
-        # Calculate moving averages and indicators
-        ma200_div2, ma200_mul2, ma30 = three_musketeers_indicator(prices)
+        long_ma, upper_border, down_border = calculate_long_MA(prices, window_len_1, mul_val)
+        short_ma = calculate_short_MA(prices, window_len_2)
 
-        # Initialize trading variables
         balance = 100.0
         trade_size = None
         buy_price = None
         last_signal = None
         trade_counter = 0
 
-        # Plotting setup for dark theme
         plt.style.use('dark_background')
         plt.figure(figsize=(12, 6))
 
         # Plot the price
         plt.plot(x, prices, label="Price", color='white', alpha=0.5)
+        plt.plot(x, down_border, label="Down Border", color='blue', linewidth=2)
+        plt.plot(x, upper_border, label="Upper Border", color='red', linewidth=2)
+        plt.plot(x, short_ma, label="Short MA", color='green', linewidth=2)
 
-        # Plot moving averages
-        plt.plot(x, ma200_div2, label="MA 200 Divided by 1.1", color='blue', linewidth=2)
-        plt.plot(x, ma200_mul2, label="MA 200 Multiplied by 1.1", color='red', linewidth=2)
-        plt.plot(x, ma30, label="MA 30", color='green', linewidth=2)
-
-        # Trading logic
         for i in range(1, len(prices)):
-            if i >= len(ma200_div2) or i >= len(ma30):
-                break
-
-            # Skip comparison if either moving average is None
-            if ma30[i] is None or ma200_div2[i] is None or ma30[i - 1] is None or ma200_div2[i - 1] is None:
-                continue
-
-            # BUY signal
-            if ma30[i] > ma200_div2[i] and ma30[i - 1] <= ma200_div2[i - 1]:
-                if last_signal != "BUY":  # Prevent duplicate BUYs
+            if short_ma[i] < down_border[i] and short_ma[i - 1] > down_border[i - 1]:
+                if last_signal != "BUY":
                     trade_counter += 1
                     trade_size = balance / prices[i]
                     buy_price = prices[i]
                     last_signal = "BUY"
                     plt.text(x[i], prices[i], f'{trade_counter} - BUY\nPrice: {prices[i]} USD\nPut: {balance:.2f} USD',
-                             color='green', fontsize=10, ha='center', va='bottom', bbox=dict(facecolor='white', alpha=0.5, edgecolor='green'))
+                             color='green', fontsize=10, ha='center', va='bottom',
+                             bbox=dict(facecolor='white', alpha=0.5, edgecolor='green'))
 
-            # SELL signal
-            if ma30[i] < ma200_mul2[i] and ma30[i - 1] >= ma200_mul2[i - 1]:
-                if last_signal == "BUY":  # Only sell after a buy
+            if short_ma[i] < upper_border[i] and short_ma[i-1] > upper_border[i-1]:
+                if last_signal == "BUY":
                     sell_value = trade_size * prices[i]
                     profit = sell_value - balance
                     potential_profit_percentage = profit / balance * 100
-                    if potential_profit_percentage >= 10:  # Only sell if profit >= 10%
+                    if potential_profit_percentage >= 10:
                         trade_counter += 1
                         plt.text(x[i], prices[i], f'{trade_counter} - SELL\nPrice: {prices[i]} USD\nTake: {sell_value:.2f} USD\nProfit: {profit:.2f} USD\n{potential_profit_percentage:.2f}%',
-                                 color='red', fontsize=10, ha='center', va='top', bbox=dict(facecolor='white', alpha=0.5, edgecolor='red'))
+                                 color='red', fontsize=10, ha='center', va='top',
+                                 bbox=dict(facecolor='white', alpha=0.5, edgecolor='red'))
                         balance = sell_value
                         trade_size = None
                         last_signal = "SELL"
 
-        # Add labels and title
         plt.title('Three Musketeers Trading Visualization', color='white')
         plt.xlabel('Data Index', color='white')
         plt.ylabel('Price', color='white')
         plt.legend(loc='upper left')
         plt.grid(True)
-
-        # Show the plot
         plt.show()
 
     except FileNotFoundError:
@@ -115,6 +122,10 @@ def visualize_prices_with_trading_logic(filename):
         print(f"An unexpected error occurred: {e}")
 
 if __name__ == "__main__":
+    window_len_1 = 200
+    window_len_2 = 17
+    mul_val = 1.1
+
     if len(sys.argv) != 2:
         print("Usage: python script.py <filename>")
     else:
