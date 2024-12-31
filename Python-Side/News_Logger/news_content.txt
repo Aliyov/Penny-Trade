@@ -1,0 +1,434 @@
+NEWScounter = 1
+URL: https://www.essentiallysports.com/ufc-mma-news-teasing-plans-of-following-in-khabibs-footsteps-sean-omalley-makes-unexpected-retirement-confession/
+
+More Sports
+ES Fancast
+Dec 30, 2024 | 9:32 PM CEST
+via Imago
+via IMAGO
+via Imago
+via IMAGO
+Everyone, even Khabib Nurmagomedov‘s most ardent fans will admit that ‘The Eagle’ retired too soon. After all, the former lightweight phenom was seemingly in the prime of his career and looked set to continue his undefeated run for many years to come. However, his father, Abdulmanap Nurmagomedov, passed abruptly in 2020 due to COVID-19. And his mother made Khabib promise that he would not fight anymore.
+Being a man of his word, Khabib retired right after his UFC 254 clash against Justin Gaethje. At least that is what everyone thinks. But Sean O’Malley‘s coach, Tim Welch thinks there may also have been another reason ‘The Eagle’ called it quits. He pointed towards the grueling weight cuts Nurmagomedov had to go through. In fact, all this retirement talk even got ‘Suga’ mulling his own retirement, leading to a surprising revelation from him as we will see later.
+“What people don’t talk about what no one talks about is people retire because they don’t want to make that weight cut. That’s a big reason a lot of these guys retire, which is, I mean it’s kind of true. You’re so used to cutting 30-35 pounds that gets f***ing old when you’re doing that three times a year… You don’t understand the discipline you have to have to cut 30-35 pounds off your body… Like Khabib, he walks around clean 200,” Welch said on the ‘TimboSuga Show’ podcast.
+ADVERTISEMENT
+Article continues below this ad
+“Yeah but he also retired,” O’Malley interjected, which led the coach to speculate that his retirement may have been “because he probably doesn’t want to make 155.” This led the former 135lbs champ to set the record straight.
+via Getty
+ABU DHABI, UNITED ARAB EMIRATES – OCTOBER 25. Khabib Nurmagomedov of Russia reacts after his submission victory. over Justin Gaethje in their lightweight title bout during the UFC 254 event/ on October 25, 2020 on UFC Fight Island, Abu Dhabi, United Arab Emirates. (Photo by Josh Hedges/Zuffa LLC via Getty Images)
+“I think, his mom and dad like that was a real thing. Like his mom said ‘no more fighting’ and he said ‘okay,'” ‘Suga’ clarified. Welch couldn’t help but point out Khabib “was only 32” at the time he retired. O’Malley, who is 30 years old right now, found Khabib’s retirement “weird” since “that is like two years from now [for me].” 
+This actually got the former champ wondering about his retirement and he concluded that “things change too. Like I could be completely done with this s**t [in two years].” For ‘Suga’ to retire in 2 years, things would have to go horribly wrong for the rainbow-haired striker. After all, the former champ looks set to compete for the belt pretty soon and then will undoubtedly look to leave behind a legacy for the ages.
+ADVERTISEMENT
+Article continues below this ad
+Did Khabib retire too soon, or was it the right call given his family commitments?
+Debate
+Merab Dvalishvili not only defeated Sean O’Malley’s game in their UFC 306 clash but also exposed the holes in ‘Suga’s game. After all, ‘The Machine’ essentially ragdolled O’Malley in their historic ‘Sphere’ clash to become the new bantamweight champ. Of course, the Georgian is set to defend his title against #1 ranked Umar Nuramgomedov at UFC 311 next month. After this, the champ has expressed his desire to rematch O’Malley.
+“I’m fighting early, on January 18, and I wanna be busy. I know O’Malley wants to come back in April, I think Petr will be ready in March. So, maybe fight Petr in March, rematch Sean in April,” Dvalishvili said in a recent interview. This means that ‘Suga’ will have the chance to avenge his loss and regain the title early next year. If that fight actually happens that is.
+ADVERTISEMENT
+Article continues below this ad
+After a loss as O’Malley took from Dvalishvili, most fighters have to scrap it out with another top contender before getting a rematch. Not to mention ‘Suga’ himself may not want to fight the champ so soon. After all, he needs better takedown defense to deal with the unstoppable and relentless ground game of the current division kingpin.
+Either way, one thing could be said for certain. O’Malley is still a long way from retiring. Unless he gets a devastating injury or his body just gives up on him. What do you think about Sean O’Malley’s thoughts about his retirement?
+Let the world know your perspective.
+Debate
+Debate
+Did Khabib retire too soon, or was it the right call given his family commitments?
+EssentiallySports is a digital-first sports media house that surfaces the best stories on America's favorite sports celebrities with a fan's perspective to 30+ M average monthly readers.
+Sports
+All
+Boxing
+Golf
+NASCAR
+NBA
+NFL
+Tennis
+UFC
+WNBA
+College Football
+Track and Field
+Gymnastics
+Olympics
+MLB
+Soccer
+Swimming
+EssentiallySports
+About Us
+Advertise With Us
+Authors
+Editorial Team
+Behind The Scenes
+Humans of EssentiallySports
+Contact Us
+Press
+FAQs
+Our Brands
+ES Think Tank
+Essentially Athletics
+She Got Game
+Essentially Golf
+Lucky Dog on Track
+FanCast
+Sports
+All
+Boxing
+Golf
+NASCAR
+NBA
+NFL
+Tennis
+UFC
+WNBA
+College Football
+Track and Field
+Gymnastics
+Olympics
+MLB
+Soccer
+Swimming
+Privacy Policy
+ES Pressroom
+Ethics Policy
+Fact-Checking Policy
+Corrections Policy
+Cookies Policy
+GDPR Compliance
+Terms of Use
+Editorial Guidelines
+Ownership and funding Information
+Full Spectrum Services LLP © 2024 | All Rights Reserved
+================================================================================
+NEWScounter = 2
+URL: https://www.techspot.com/news/106140-privacy-alert-iphone-feature-shares-photo-data-apple.html
+
+The big picture: When Apple launched iOS 18 earlier this year, it introduced an Enhanced Visual Search feature in the Photos app. It builds on the existing Visual Look Up tool, but also raises serious privacy concerns that have some users up in arms. 
+Visual Look Up recognizes objects, animals, landmarks, and more from photos on your iPhone. For example, if you take a picture of a flower, the tool attempts to identify its species. It can do the same for dog breeds, car models, and other items.
+The original Visual Look Up prioritized privacy. Apple claimed it sent "limited" data to their servers, using a rotating ID number instead of anything personally identifiable. While location data was shared anonymously, the overall approach was minimal and privacy-conscious.
+Enhanced Visual Search, however, takes things a step further. A new privacy disclaimer explicitly states that the feature aims to "match places in your photos with a global index maintained by Apple" to identify landmarks. Even more troubling, this behavior is enabled by default.
+
+Apple maintains that Enhanced Visual Search is still a private process, employing encryption, differential privacy, and IP masking to safeguard user data. The company has even published a research paper outlining the technical details of this process. However, developer Jeff Johnson, who first noticed the new data-sharing behavior, criticized Apple's opt-out approach.
+"This user never requested that my on-device experiences be 'enriched' by phoning home to Cupertino. This choice was made by Apple, silently, without my consent," he noted in a blog post.
+He argues that any data leaving the device for Apple's servers undermines their long-touted "what happens on your iPhone, stays on your iPhone" stance. On the other hand, one could argue that most cloud-based services inherently involve some level of data sharing.
+For privacy-conscious users who prefer not to participate, you can disable Enhanced Visual Search in your device settings. On iPhone, navigate to Settings > Apps > Photos and toggle off "Enhanced Visual Search" at the bottom. For Mac users, the option can be found under Photos > Settings. Disabling this feature prevents your photos and location data from being added to Apple's cloud-based search index.
+For everyone else, it's worth noting that the convenience of Enhanced Visual Search comes with increased data sharing with Apple's servers. An opt-in approach might have been a better way to avoid sparking this controversy.
+Image credit: Amanz
+TECHSPOT : Tech Enthusiasts, Power Users, Gamers
+TechSpot is a registered trademark. About Us Ethics Statement Terms of Use Privacy Policy Change Ad Consent Advertise
+© 1998 - 2024 TechSpot, Inc. All Rights Reserved.
+================================================================================
+NEWScounter = 3
+URL: https://edition.cnn.com/2024/12/30/politics/trump-musk-h1b-visa-analysis/index.html
+
+Donald Trump’s siding with Elon Musk over visas for high-tech workers is the most significant example yet of the president-elect favoring powerful elements in his new MAGA coalition over his base’s anti-immigrant DNA that he twice tapped in his rise to power.
+    
+
+            The boiling holiday feud over H-1B visas exposed new fissures across Trump’s broadened support base and reflected the contradictions between his populist ideology and the self-interests of many of the key players in his refashioned inner circle.
+    
+
+            After several days of silence over the controversy, the president-elect stepped in, making clear he supported Musk’s argument for recruitment flexibility for the tech industry.
+    
+
+Related article
+Trump defends foreign worker visas, siding with Musk amid MAGA backlash
+
+
+            Musk, the richest man in the world, made his case in a series of outspoken posts on X. “The reason I’m in America along with so many critical people who built SpaceX, Tesla and hundreds of other companies that made America strong is because of H1B,” he wrote to one critic on the platform that he owns. “I will go to war on this issue the likes of which you cannot possibly comprehend.”
+    
+
+            The visa issue erupted into a full-blown storm following comments by Vivek Ramaswamy, Musk’s co-chair of the Department of Government Efficiency, which Trump has set up to slash the size of federal operations. The former GOP presidential candidate criticized American culture, education standards and children’s TV that he said “venerated mediocrity over excellence for way too long.” The comments came perilously close to an elitist’s disdain for millions of Americans and their culture that Republicans have long accused Democrats of promoting.
+    
+
+            On the other side of the debate, Steve Bannon, who served in the first Trump administration, blasted H-1B visas on his “War Room” podcast as a “scam” by Silicon Valley oligarchs that are about “taking American jobs and bringing over what essentially become indentured servants at lower wages.”
+    
+
+            H-1B visas allow the brightest foreign workers, many of them engineers and computer scientists, to live and work in the US. Supporters say they’re vital to ensuring Silicon Valley innovation continues to lead the world.  The issue has become broader than a mere economic question: because of artificial intelligence and new generation computing, the industry is now critical to US defense and national security.
+    
+
+            But some of Trump’s most vocal and committed MAGA supporters have blasted the visas as inconsistent with the America First and anti-immigration philosophy on which the president-elect built his appeal. Some critics of the system also argue that by importing foreign workers, the US government blocks the path to advancement for American workers and college graduates, including minorities.
+    
+
+            One case is insufficient evidence to judge whether Trump’s favoring of the Tesla and SpaceX pioneer will set the tone for a presidency over which Musk already holds considerable sway. And Trump defies patterns by acting on his gut and keeping opponents off-balance, so it would be risky to see the H1-B visa issue as a wider metaphor for how the administration will unfold.
+    
+
+            However, Musk’s capacity to use X to spread his message, as well as Trump’s eventual blessing for his argument, underscores the huge power he commands as the ubiquitous but unelected sidekick of the president-elect. Earlier this month, for example, Musk came out ahead of Trump and used his platform to help tank a bipartisan funding bill in the House, sending the government perilously close to a shutdown.
+    
+
+            His influence could have implications beyond immigration policy. Musk’s vast business before the US government — across multiple sectors of the space industry, electric vehicles and artificial intelligence — could quickly cause multiple conflicts of interest. And he has enormous sway abroad — including in countries like China, where the hawkish views of some of Trump’s top Cabinet picks also risk colliding with the tech mogul’s priorities.
+    
+
+            H-1B nonimmigrant visas allow American firms to temporarily employ foreign workers with specialized knowledge and advanced academic qualifications to help them stay globally competitive. Proponents say the system is not intended to replace American workers but to fill vital gaps for specialized workers that the US workforce cannot satisfy. The visas have often been used by South Asian workers nurtured in India’s thriving high-tech industries to come to the United States and build a prosperous diaspora.
+    
+
+            In isolation, attempts to expand the H-1B visa program would not seem incompatible with Trump’s hardline immigration policy and promise of a mass deportation of undocumented immigrants to begin soon after he’s sworn in next month.
+    
+
+            But nearly two decades of bipartisan attempts to overhaul and solidify the H-1B program have largely failed, often as broad immigration reform plans foundered on the polarization of immigration politics that Trump used to fuel his rise to power in 2016 and again in 2024.
+    
+
+Related article
+Trump vows to ‘hire American.’ His businesses keep hiring foreign guest workers
+
+
+            Trump has now made clear he agrees with Musk and said he’d sometimes used H-1B visas in his businesses, although he’s more frequently employed temporary part-time foreign workers on H-2B visas at his golf resorts and hotels.
+    
+
+            “I’ve always liked the visas, I have always been in favor of the visas. That’s why we have them,” Trump told The New York Post on Saturday about the H-1B system.
+    
+
+            Musk made the case for expanding the program in one of his less explosive posts on X. “We should greatly increase legal immigration of anyone who is hard-working, honest and loves America,” he wrote. “Every such person is an asset to the country. But massive illegal immigration of people we know nothing about is insane.”
+    
+
+            Supporters of the South Africa-born immigrant argue that his success in disrupting and reinventing industries like space exploration and low-carbon transportation mean he’s exactly the kind of person who should be at the center of government, innovating in Washington.
+    
+
+            But the tech mogul also has clear self-interests in remaining close to the next president, given his billions of dollars in contracts with the US government. And his new position at DOGE ostensibly gives him the capacity to slash regulations that constrain his own ventures.
+    
+
+            Musk’s zeal for defending H-1B visas appears to be a signal that he will not shirk from aggressively pushing his agenda when Trump is president. It will be up to the president-elect to decide how he responds.
+    
+
+            Liberal social media pundits delighted in highlighting a “civil war” in the MAGA movement. But there’s nothing necessarily new about a president presiding over feuding parties in his coalition.
+    
+
+            Trump, for instance, often seems to invite conflict among his aides. And even President Joe Biden had to manage antagonism between the progressive and more moderate wings of the Democratic Party early in his administration.
+    
+
+            In the coming weeks, Trump’s ability to reconcile the differing interests among conservative budget hawks, hardline MAGA lawmakers and comparative moderates who may be vulnerable in 2026 general elections will dictate the fate of his aggressive legislative plans on immigration, budget trimming and tax cuts.
+    
+
+Related article
+Trump bristles at Musk’s rocketing profile as Democrats play on the president-elect’s vanity
+
+
+            But there’s no modern precedent for a faction of a president’s power base being led by someone as rich, mercurial and powerful as Musk with immediate access to a mighty social media network. Republican lawmakers, for instance, spoke before Christmas about how the phones in their offices suddenly lit up when Musk called for the gutting of House Speaker Mike Johnson’s initial year-end spending bill.
+    
+
+            And the Tesla chief’s advocacy for the lucrative high-tech industry on the West Coast feels a million miles away from the economic concerns expressed by Trump’s core supporters and the low-propensity voters in the suburbs who paved his way back to the White House.
+    
+
+            The president-elect ran on reducing the price of eggs and bacon after a punishing round of inflation — yet he’s largely chosen a Cabinet of billionaires and millionaires who’ve not had to worry about such matters for years. If Trump’s Cabinet secretaries are as zealous in pursuing their personal goals as Musk is, his administration’s policy may appear inconsistent and out of touch.
+    
+
+            The uproar over tech visas also revived one of the transition’s most intriguing questions. How long will Trump tolerate Musk’s capacity to dominate political debate in a way that only he can match? Skeptics are convinced that the president-elect will soon tire of Musk’s ubiquity. Democrats have already tried to fracture their relationship by referring to “President Musk.” And the lesson of Trump’s first term is that those who overshadow him soon find themselves exiting his orbit or becoming a scapegoat when things go wrong.
+    
+
+            This may be how things develop. But both Trump and Musk have huge incentives to stick together. Musk will never be able to replicate the inside government perch that he can use to promote his interests. And Republicans will be banking on the SpaceX chief’s financial might as the midterm elections approach after he poured tens of millions of dollars into Trump’s 2024 campaign.
+    
+
+            But a deeper reality may postpone a possible schism between Trump and Musk. Each has the capacity to wreak destruction on the other. The president-elect will soon be able to wield the federal government as an instrument of revenge. But someone as social media savvy as Trump, who’s spun falsehoods into a reality to which millions of Americans are committed, would surely balk at making an enemy of the man who controls X.
+    
+© 2024 Cable News Network. A Warner Bros. Discovery Company. All Rights Reserved.  CNN Sans ™ & © 2016 Cable News Network.
+================================================================================
+NEWScounter = 4
+URL: https://www.bostonglobe.com/2024/12/30/metro/mass-legislature-health-care-steward-collapse-drug-costs/
+
+Lawmakers sent a pair of health care bills to Governor Maura Healey’s desk Monday, delivering their response to some of the biggest problems facing Massachusetts residents this year — the Steward Health Care crisis and increasingly out-of-reach prescription drug costs — less than 48 hours before the two-year legislative session is set to end at midnight Wednesday.
+One bill, aimed at enhancing the hospital oversight process, seeks to avoid another hospital system collapse as the state witnessed with Steward by increasing the financial reporting requirements and penalties for hospitals and their investors. The other bill, dealing with pharmaceutical access and transparency, would overhaul cost and insurance coverage requirements for certain drugs. The package would also ramp up regulation of overseeing the pharmacy brokers that help set drug costs.
+But with final votes taking place mere hours before the Legislature starts over in the new year, the late scramble provided another example of state lawmakers struggling to reach consensus on significant policy matters, a challenge that has increasingly plagued one of the least-transparent legislative bodies in the country in recent years. Both health care bills had stalled for months behind closed doors, leaving it an open question for advocates whether lawmakers would leave those issues unaddressed.
+Leaders in the Legislature appeared unfazed by the last-minute lawmaking. House Speaker Ron Mariano in a statement Friday said the bills represented the “culmination of a historic legislative session.” Senate President Karen Spilka, meanwhile, praised the bills for their potential to “save thousands of dollars for residents.”
+State Senator Cindy Friedman, who led negotiations on both health care bills, said despite the delay, the most important thing is that lawmakers got the legislation to Healey.
+“It took longer than I wanted it to, but we have something in place that allows us to move forward,” the Arlington Democrat told The Boston Globe Monday. State Representative John Lawn, Democrat of Watertown, led House negotiations on the two health bills.
+While lawmakers were largely celebratory, some including state Senator Bruce Tarr, a Gloucester Republican, criticized the last-minute timing. He noted lawmakers had to pass these bills during an informal session instead of during the formal session that ended July 31.
+Advertisement
+During informal sessions, votes can be stopped by one lawmaker, which happened earlier this year. In October, state Representative Bradley Jones, the House’s top Republican twice blocked a sweeping climate bill from advancing.
+“I would hope in the new session we will redouble our efforts to make sure that substantive, complex matters are taken up in formal sessions with the predictability, the accountability, and the full consideration that they deserve,” Tarr, who helped negotiate the bills as a member of the health care financing committee, said during a speech on the Senate floor Monday.
+Tarr, in his speech, said he hopes lawmakers take the last-minute rush as “a lesson” and a reminder “to think about rules and boundaries and guidelines so that we can prevent ourselves from being in this situation.”
+For four months, the two health care bills were held up in tangled conference talks as House and Senate negotiators hashed out policies behind closed doors. The compromise proposals were released Friday night before being brought to the floor for votes Monday afternoon.
+The compromise legislation to overhaul the prescription drug industry — a longtime priority of the Senate — would ensure patients pay no more than $25 for certain name-brand medications to treat chronic illnesses, including insulin for diabetes, and face no costs for similar generic options.
+It would also require MassHealth, the Group Insurance Commission, and other insurers to provide coverage for one generic drug and one name-brand drug for diabetes, asthma, and two of the most prevalent heart conditions. Friedman said the change would help roughly 180,000 people in Massachusetts.
+Advertisement
+Perhaps most notably, the bill would create a licensure process for pharmacy benefit managers, or PBMs, health industry middlemen who broker drug transactions between insurers, manufacturers, and pharmacies. Critics say they function with little oversight and are responsible for driving up drug prices for consumers.
+Advocates of toughening PBM regulation commended the Legislature for taking up the issue, but said they were disappointed final changes were less extensive than they’d hoped. The House’s version of that bill had included additional reforms, such as a rebate change advocates said would make drugs cheaper for patients, that negotiators ultimately left out of the final bill.
+“This little bit of progress, we will take it, but we feel it’s pretty minimal,” said Bill Murphy, the director of advocacy and public policy at the Epilepsy Foundation of New England, which advocated for PBM reforms. “But it does help to increase the transparency, so hopefully more folks will begin to understand what PBMs are and how they operate.”
+The health care oversight bill, which originated in the House, includes a measure that would ban hospitals from leasing the land on which their main campuses stand from real estate investment trusts, a change offered in direct response to the crisis that’s enveloped Steward Health Care and the hospitals it formerly owned in Massachusetts.
+The compromise legislation also would require private equity investors and real estate investment trusts like Steward to comply with financial reporting requirements, and the penalties for submitting late data would soar to $25,000 per week, from $1,000 currently.
+Tim Foley, executive vice president of 1199SEIU, the health care workers union, commended lawmakers, saying the hospital legislation “expanded oversight and regulation provisions are essential to preventing a repeat of the Steward Health Care crisis.”
+Advertisement
+He also praised lawmakers for taking on health equity and pharmaceutical spending, which he cast as “driving up the cost of health care and crippling working families’ budgets.”
+Still, some health care advocates lamented the Legislature did not do more to address bigger problems in the industry. Alan Sager, a Boston University professor of health law, policy, and management, called the Legislature’s hospital bill “backwards looking,” describing it as reacting to the Steward crisis, rather than proactively tackling problems with the health care system.
+“The complexity of the bill and its general weaknesses testify to how unserious state government is in confronting grave health care problems in Massachusetts,” Sager said, pointing to issues such as people being underinsured and shortages of family doctors and social workers. “They’re not remotely adequate to address the steadily rising and unaffordable cost of health care.”
+The pair of health care bills are among the last pieces of legislation to get a vote in the months since formal lawmaking wrapped up on July 31.
+Lawmakers broke for their August recess without finishing a nearly $4 billion jobs bill, a clean energy package, a sweeping maternal health bill, all sitting in private negotiations known as conference committees.
+Lawmakers ultimately passed those bills — and more — in the months since, turning what is a typically quiet time on Beacon Hill into one of the most productive stretches of the Legislature’s two-year session.
+But some cast the late movement on the bills, and the little information available to the public about where they stood, as problematic.
+Advertisement
+“The soon-to-be concluded session continues a pattern of actions left for the last minute and actions left to a handful of legislators. Those both fall well short of a well-functioning and truly democratic legislature,” said Jay Kaufman, a former legislator who now advocates for greater transparency in the Legislature.
+“I would want the Legislature to be proactive and anticipating problems and challenges and opportunities, rather than reacting,” he added, “and the Steward health care crisis is a perfect example of having failed to look ahead and being left to pick up the pieces.”
+Samantha J. Gross can be reached at samantha.gross@globe.com. Follow her @samanthajgross. Anjali Huynh can be reached at anjali.huynh@globe.com.
+Digital Access
+Home Delivery
+Gift Subscriptions
+Log In
+Manage My Account
+Customer Service
+Delivery Issues
+Feedback
+Help & FAQs
+Staff List
+Advertise
+Newsletters
+View the ePaper
+Order Back Issues
+News in Education
+Search the Archives
+Privacy Policy
+Terms of Service
+Terms of Purchase
+Contact
+Work at Boston Globe Media
+Internship Program
+Co-op Program
+Do Not Sell My Personal Information
+================================================================================
+NEWScounter = 5
+URL: https://www.essentiallysports.com/soccer-football-news-ligue-one-cites-lionel-messi-example-to-hit-back-at-cristiano-ronaldo-for-calling-saudi-league-better/
+
+More Sports
+ES Fancast
+Dec 29, 2024 | 1:45 PM CEST
+via Imago
+Riyadh All-Star XI vs Paris Saint-Germain FC Lionel Messi R and Cristiano
+Ronaldo in action during the Riyadh All-Star XI vs Paris Saint-Germain FC at
+King Fahd Stadium on January 19, 2023 in Riyadh, Saudi Arabia. Riyadh King Fahd
+Stadium Saudi Arabia PUBLICATIONxNOTxINxJPNxUK Copyright: xStringerx
+2023.01.19_PSI03235.GS.WEST_HOA_001417
+via Imago
+Riyadh All-Star XI vs Paris Saint-Germain FC Lionel Messi R and Cristiano
+Ronaldo in action during the Riyadh All-Star XI vs Paris Saint-Germain FC at
+King Fahd Stadium on January 19, 2023 in Riyadh, Saudi Arabia. Riyadh King Fahd
+Stadium Saudi Arabia PUBLICATIONxNOTxINxJPNxUK Copyright: xStringerx
+2023.01.19_PSI03235.GS.WEST_HOA_001417
+“It’s not the statistics! It’s not the statistics!” Ray Hudson once famously said of the World Cup winner, Lionel Messi in 2012. Well, it turns out this time it is, at least meteorologically. The soccer world thrives on Messi vs. Ronaldo, which is the eternal tango. But this time, the flames were stoked not by the usual Ballon d’Or comparisons or goal tallies, but by a scorching comment from Cristiano Ronaldo at the Globe Soccer Awards in Dubai. It’s the kind of statement that fuels forums, barroom debates, and, evidently, entire leagues. And sad to say, but this time, one of the GOATs might be wrong.
+On Friday, in Dubai, Cristiano Ronaldo collected the award for the best Middle East player thanks to his scoring feats for Al-Nassr. Ronaldo scored 16 goals and three assists in 19 appearances in all competitions. On a day that sparked festivities, the Portuguese star turned the atmosphere tense with his fiery comments. He first took shots against France Football for not giving the Ballon d’Or to Vini Jr. Then came in the jibe on Ligue 1, which quickly became a Messi vs. Ronaldo, as it usually does. Speaking at the event, Ronaldo said: “The Saudi Pro League is better than Ligue 1, of course. I’m not saying that because I play here. I don’t care what people think about it. Players should come here and they will see quickly. Just try to do sprints at 38, 39, 40 degrees.” 
+The official Ligue 1 account have clapped back at Cristiano Ronaldo following his comments at the Globe Soccer awards, where he claimed the Saudi Pro League was better than Ligue 1 😳 pic.twitter.com/4SIUQDljRI
+— Pubity Sport (@pubitysport) December 28, 2024
+Expand Tweet
+ADVERTISEMENT
+Article continues below this ad
+
+Man, that’s bold, no doubt, delivered with the panache of someone who has done it all but still finds ways to add fuel to the fire. If Ronaldo thought the comment might slip under the radar, Ligue 1 was ready with a counterpunch—a digital jab. Hey, you fire some shots; you take some. Right?
+On their Spanish X account, Ligue 1’s social media team dropped a cheeky response. Highlighting La Pulga’s World Cup heroics in Qatar to fire back at CR7, the post read, “Leo Messi playing in 38 degrees.” Short, sharp, and straight to the point. A reminder of the Inter Miami star’s magnum opus, the culmination of his career—a World Cup trophy secured under the sweltering Middle Eastern sun.
+But how fair is El Bicho’s assessment? Comparisons between leagues often come down to two factors: player quality and competitive depth. The Saudi Pro League has undoubtedly made waves, signing marquee players like Neymar, Karim Benzema, and N’Golo Kante in what feels like a footballing gold rush. Al-Nassr, Ronaldo’s current club, boasts a roster that would be the envy of many European teams. Yet, when it comes to metrics of league quality—Champions League performances, talent development pipelines, and overall tactical depth—Ligue 1 still stands tall.
+French clubs have shown their mettle on the European stage this season. Lille took downReal Madrid at home thanks to a clinical Jonathan David penalty. Brest, debuting in the Champions League, sits sixth in the league phase standings, while Monaco remains in contention. Ligue 1’s showing in Europe is a testament to its grit and growth, But Leo Messi’s former club, PSG sits 24 and could be in trouble as they’ve struggled to adapt following the departure of Kylian Mbappe to Madrid. That doesn’t seem close to a finished league.
+Is Ronaldo's claim about the Saudi Pro League just bravado, or does it hold some truth?
+Debate
+One thing that could probably save the iconic 7’s humiliation here is that the World Cup happened in December. The average temperature in Qatar in December is 23 degrees. So, Cristiano Ronaldo could have a point. His point about running sprints in near-40-degree heat isn’t just bravado; it’s a nod to the physical toll and adaptability required, especially if you are playing high-press soccer.
+ADVERTISEMENT
+Article continues below this ad
+This felt personal, almost as if Ronaldo was still grappling with the specter of Messi’s dominance in France. The timing of his statement, coinciding with Ligue 1’s Champions League successes, underscores the irony. But will he stop? Of course, not.
+In the same event, the drama didn’t stop there. The active highest goal scorer of International soccer dropped even more headliners in the ceremony. Dude literally went to collect his award, even before the host announced his name. As soon as CR7 heard “the greatest goal-scorer,” he left his seat for the podium. That’s aura!
+ADVERTISEMENT
+Article continues below this ad
+Cristiano Ronaldo may be 39, but slowing down? Not a chance. Currently dazzling fans with Al-Nassr in Saudi Arabia, the Portuguese icon shows no signs of hitting the brakes. The burning question, of course, is how long can he keep this up. Ronaldo’s answer to that remains delightfully vague. When asked if he has a post-retirement plan involving specific clubs, he grinned and said, “Not yet, a few maybe.” Classic Ronaldo—leaving us all guessing.
+You can’t help but draw parallels to another ageless wonder, LeBron James. Both legends, born in the same year, are redefining what’s possible in sports longevity. Hyperbaric chambers, relentless training, and an unquenchable hunger for greatness keep them ticking at a level most athletes half their age would envy.
+Let the world know your perspective.
+Debate
+Debate
+Is Ronaldo's claim about the Saudi Pro League just bravado, or does it hold some truth?
+EssentiallySports is a digital-first sports media house that surfaces the best stories on America's favorite sports celebrities with a fan's perspective to 30+ M average monthly readers.
+Sports
+All
+Boxing
+Golf
+NASCAR
+NBA
+NFL
+Tennis
+UFC
+WNBA
+College Football
+Track and Field
+Gymnastics
+Olympics
+MLB
+Soccer
+Swimming
+EssentiallySports
+About Us
+Advertise With Us
+Authors
+Editorial Team
+Behind The Scenes
+Humans of EssentiallySports
+Contact Us
+Press
+FAQs
+Our Brands
+ES Think Tank
+Essentially Athletics
+She Got Game
+Essentially Golf
+Lucky Dog on Track
+FanCast
+Sports
+All
+Boxing
+Golf
+NASCAR
+NBA
+NFL
+Tennis
+UFC
+WNBA
+College Football
+Track and Field
+Gymnastics
+Olympics
+MLB
+Soccer
+Swimming
+Privacy Policy
+ES Pressroom
+Ethics Policy
+Fact-Checking Policy
+Corrections Policy
+Cookies Policy
+GDPR Compliance
+Terms of Use
+Editorial Guidelines
+Ownership and funding Information
+Full Spectrum Services LLP © 2024 | All Rights Reserved
+================================================================================
+NEWScounter = 6
+URL: https://bleacherreport.com/articles/10148571-best-old-guy-seasons-in-sports-since-2015
+
+Even though Father Time is undefeated in professional sports, some of the best athletes in history have put up a heck of a fight.
+LeBron James, for example, turns 40 years old on Dec. 30, 2024. He's not merely an icon who is clinging to a roster spot because of his reputation; "The King" remains among the NBA's most productive players.
+Really, he's just the latest superstar in a widespread trend.
+During the past decade, we've watched some "old guys" set the standard in their respective sports. While the most notable players are NFL quarterbacks, it's happened in MLB and the NHL, as well.
+The list is subjective, ordered chronologically (with one exception, sort of) and focused on players in their age-38 seasons or later.
+
+The postseason ended on a sour note, considering the Boston Red Sox fell to Cleveland in a three-game ALDS sweep.
+David Ortiz dazzled in his final MLB campaign, though.
+As a 40-year-old, the powerful designated hitter launched 38 homers, paced the American League with 127 RBI and led the majors with 48 doubles. Ortiz tallied a .315 batting average, .401 on-base percentage and an MLB-best .620 slugging percentage.
+After landing his 10th All-Star nod, Ortiz finished sixth in AL MVP voting and earned his seventh and final Silver Slugger.
+
+Among his four qualifying seasons, Drew Brees enjoyed the most success at 39 years old during his 2018 campaign.
+Brees set an NFL record with a 74.4 completion percentage while throwing for 3,992 yards and 32 touchdowns to five interceptions. He guided the New Orleans Saints to a 13-3 record and an NFC South crown, finishing second in both MVP and Offensive Player of the Year voting.
+Unfortunately for Brees, a controversial uncalled pass interference in the NFC Championship Game ended the Saints' hope of a title. They bowed out to the Los Angeles Rams in a 26-23 overtime loss.
+New Orleans, nevertheless, made a legitimate run toward a Super Bowl behind a hyper-efficient Brees.
+
+As part of a record-setting Minnesota Twins lineup in 2019, Nelson Cruz was an ideal designated hitter.
+He didn't play a single inning as a fielder, and that was perfectly fine.
+Cruz notched a .311/.392/.639 triple-slash at 38 years old, blasting a team-high 41 homers and driving in 108 runs. Partially thanks to him, the AL Central-winning Twins made MLB history with 307 total home runs.
+In addition to winning the third of his four career Silver Sluggers, Cruz finished ninth in AL MVP voting.
+
+As a 37-year-old quarterback for the Green Bay Packers, Aaron Rodgers won the league MVP. And he did it again at 38.
+Rodgers threw for 4,115 yards and 37 touchdowns to four interceptions, adding 101 yards and three scores as a runner. Green Bay collected 13 wins and secured the NFC North for the third straight year.
+Yes, there was soon all-too-familiar heartbreak in the postseason. Green Bay lost to the San Francisco 49ers—for a fourth time in a decade—during the Divisional Round, and it ended up being the organization's 11th and final trip to the playoffs with Rodgers at the helm.
+Along the way, though, the Packers enjoyed one last elite season from a franchise legend.
+
+Look, there are only about a half-dozen options here. Tom Brady is the absolute gold standard of late-career excellence.
+As a member of the New England Patriots, he finished second in MVP voting at 38 years old in 2015, accomplished the same and won a Super Bowl in 2016, earned the MVP in 2017 and won a Super Bowl in 2018. Brady left for the Tampa Bay Buccaneers in 2020 and, at 43, propelled the Bucs to their second NFL title.
+Basically any of those seasons could be a worthy choice.
+My pick is the 2021 campaign simply because he was 44 freaking years old in his last top-level season. Brady passed for 5,316 yards—the third-best total in NFL history—and a league-high 43 touchdowns. Tampa went 13-4 and won the NFC South as Brady was the MVP runner-up.
+Brady, incredibly, could be a Hall of Fame selection based solely on what he did after turning 38 years old.
+
+Joe Pavelski was like a fine wine, getting better with age.
+Even before this memorable season, he made "old guy history" with 13 goals for the Dallas Stars during the 2020 playoffs. Nobody aged 35 or older had ever scored more in a single postseason.
+That surge sparked a renewed Pavelski, who amassed 81 points in 2021-22 and 77 in 2022-23 at 38 years old. In the latter season, he became the first 38-plus player to score at least seven goals in a playoff series. Pavelski ended the 2023 postseason with 14 points in 14 games, helping the Stars advance to the Western Conference Final.
+A legend for the San Jose Sharks prior to his career-closing run in Dallas, Pavelski retired with 1,068 points.
+
+Kareem Abdul-Jabbar, Michael Jordan, Karl Malone and LeBron James are the only NBA players to average 20-plus points per game during their age-38 season or later.
+LeBron is trending toward that production for a third time, something none of the others did more than twice.
+For now, the recent 2023-24 campaign stands as James' best old-man year. He averaged 25.7 points—and shot 54.0 percent overall with a career-best 41.0 three-point clip—8.3 assists and 7.3 rebounds, earning third-team All-NBA and his 20th All-Star appearance.
+The best version of LeBron is presumably in the past, yet he's still an unquestionably elite player at 40 years old.
+================================================================================
