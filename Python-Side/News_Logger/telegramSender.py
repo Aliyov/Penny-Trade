@@ -55,22 +55,22 @@ def send_telegram_message(message):
 # Monitor the file for changes
 def monitor_file(file_path):
     last_news_counter = load_last_counter()  # Load the last processed news counter
-    while True:
-        try:
-            # Parse file for new entries
-            news_dict = parse_news_file(file_path, last_news_counter)
-            if news_dict:
-                for counter, news in news_dict.items():
-                    message = f"NEWScounter = {counter}\n{news}"
-                    send_telegram_message(message)  # Send new news entry
-                last_news_counter = max(news_dict.keys())  # Update last processed counter
-                save_last_counter(last_news_counter)  # Save the new counter to file
+    #while True:
+    try:
+        # Parse file for new entries
+        news_dict = parse_news_file(file_path, last_news_counter)
+        if news_dict:
+            for counter, news in news_dict.items():
+                message = f"{news}"
+                send_telegram_message(message)  # Send new news entry
+            last_news_counter = max(news_dict.keys())  # Update last processed counter
+            save_last_counter(last_news_counter)  # Save the new counter to file
 
-        except Exception as e:
-            print(f"Error: {e}")
+    except Exception as e:
+        print(f"Error: {e}")
         
         # Check for changes every 10 seconds
-        time.sleep(60 * 10)
+    #time.sleep(60 * 10)
 
 # Run the file monitor
 if __name__ == "__main__":

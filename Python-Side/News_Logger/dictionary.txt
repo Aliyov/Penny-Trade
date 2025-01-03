@@ -1,0 +1,251 @@
+bitcoin 0 1
+ethereum 0 1
+binance 0 1
+blockchain 10 1
+decentralization 20 1
+ledger 10
+smart contracts 30
+mining 10
+staking 20
+token 0 1
+altcoin 0 1
+stablecoin 20 1
+wallet 0 1
+hot wallet 10 1
+cold wallet 20 1
+paper wallet 20 
+address 0
+private key 10
+public key 10
+seed phrase 20
+hashrate 20
+nodes 10
+consensus 10
+proof of work 20
+proof of stake 30
+dapp 20
+defi 30
+yield farming 20
+liquidity pool 20
+swap 10
+dex 20
+cex -10
+gas fees -20
+governance token 20
+utility token 30
+security token 20
+nft 20 1
+metaverse 30 1
+airdrops 20
+ico 20
+ieo 20
+ido 20
+tokenomics 30
+halving 30
+fork 0
+hard fork 20
+soft fork 10
+scalability 30
+rollups 30
+zk-rollups 40
+sidechain 20
+mainnet 10
+testnet 10
+bridge 10
+cross-chain 20
+multisig 20
+oracle 10
+hash 10
+block height 10
+genesis block 20
+block reward 20
+coinbase transaction 10 1
+gas limit 10
+hashing algorithm 10
+difficulty adjustment 10
+unspent transaction output 20
+txid 10
+whale 10
+rug pull -80
+pump and dump -70
+market cap 10 1
+satoshi 20 1
+wei 10
+gwei 10
+erc-20 10
+erc-721 10
+erc-1155 20
+token burn 30
+circulating supply 10
+max supply 10
+vesting 10
+release schedule 10
+whitelist 10
+block explorer 20
+liquidity mining 20
+impermanent loss -20
+staking rewards 30
+validator 20
+delegator 20
+sharding 30
+lightning network 30
+privacy coin 20
+mempool 10
+hard cap 20
+soft cap 10
+fomo 20
+hodl 20
+crisis -40
+growth 30
+decline -10
+btc 0 1
+solana 0 1
+stable 0
+profit 50
+loss -50
+bullish 40 1
+bearish -40 1
+investment 20
+collapse -70
+surge 30
+plummet -50
+trade 10 1
+market 0
+regulation -10
+adoption 30
+scam -80
+innovation 40
+bankruptcy -90
+volatility -20
+recession -60
+recovery 30
+institutional 20
+dump -30
+pump 20
+yield 20
+fraud -80
+exchange 0
+fees 0
+stake 10
+leverage -20
+debt -40
+deflation -20
+inflation -30
+equity 30
+asset 10 1
+futures -10
+options 0
+security 10
+liquidity 20 1
+hedge 10
+risk -20
+reward 30
+fiat 0
+portfolio 20
+breach -70
+hacker -80
+exploit -70
+decentralized 20
+centralized -20
+scaling 20
+upgrade 30
+utility 20
+advisory 10
+lawsuit -50
+penalty -40
+partnership 40
+audit 10
+compliance 20
+ban -60
+approval 30
+disruption 20
+transparency 20
+revenue 30
+losses -50
+earnings 40
+fud -50
+hype 10
+chart 0
+trend 10
+breakout 30
+support 20
+resistance -10
+oversold 20
+overbought -10
+capital 20
+management 20
+ceo 10
+announcement 20
+hack -80
+profitability 40
+dilution -30
+fear -60
+greed 30
+sentiment 20
+algorithm 10
+arbitrage 20
+volumes 10
+capitalization 20
+margin -20
+dividends 30
+short-sell -30
+derivative -10
+protocol 10
+network 10
+smart contract 30
+reserve -10
+borrow -20
+lend 20
+trustless 20
+collateral 10
+inflationary -20
+deflationary 30
+buyback 30
+liquidation -50
+defaults -40
+contract 0
+escrow 10
+peer-to-peer 20
+spread -10
+trust 30
+policy -10
+sanction -50
+fine -40
+penalize -50
+exchange rate 10
+balance sheet 20
+statement 10
+profit margin 30
+forecast 20
+projections 20
+risk assessment 10
+quantitative easing 0
+monetary policy -10
+stimulus 20
+interest rate -10
+credit score 20
+credit card 10
+mortgage -20
+loan -20
+repayment 10
+fundraising 30
+venture capital 40
+series a 20
+ipo 40
+stock 20
+bond 20
+mutual fund 20
+etf 30
+index 10
+leveraged -10
+securities 10
+treasury 20
+fiat currency -10
+digital asset 20
+reserve currency 10
+remittance 10
+fiat-backed 20
+staking pool 30
+rewards 30
+consensus mechanism 10
+encryption 20

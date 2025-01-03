@@ -66,6 +66,12 @@ def fetch_full_content(url):
         print(f"Error fetching full article content from URL: {e}")
         return None
 
+def clear_file(file_path):
+    """Clear the content of a file."""
+    with open(file_path, "w", encoding="utf-8") as file:
+        file.write("")  # Write an empty string to clear the file
+
+
 
 def fetch_and_write_news():
     global news_counter
@@ -81,8 +87,11 @@ def fetch_and_write_news():
         # Check if articles exist in the response
         if "articles" in data:
             articles = data["articles"]
+            file_path = "news_logger.txt"
+            clear_file(file_path)
 
-            with open(OUTPUT_FILE, "a", encoding="utf-8") as content_file, \
+
+            with open(OUTPUT_FILE, "w", encoding="utf-8") as content_file, \
                  open(URL_LOG_FILE, "a", encoding="utf-8") as url_file:
 
                 for article in articles:
@@ -127,8 +136,8 @@ def fetch_and_write_news():
 # Main execution loop
 load_logged_data()  # Load previous logs and counter
 try:
-    while True:
-        fetch_and_write_news()
-        time.sleep(5)  # Wait for 5 seconds before fetching again
+    #while True:
+    fetch_and_write_news()
+    time.sleep(5)  # Wait for 5 seconds before fetching again
 except KeyboardInterrupt:
     print("News updating stopped.")
