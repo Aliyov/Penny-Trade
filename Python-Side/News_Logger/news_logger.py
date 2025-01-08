@@ -4,25 +4,25 @@ from datetime import datetime
 from bs4 import BeautifulSoup
 
 # Define the API key and endpoint
-API_KEY = "bc6a8eaddc7aed3ed4a9150079a8addf"
-ENDPOINT = "https://gnews.io/api/v4/search"
+API_KEY = "XzMdvFPYachq9RIz1l1Z2oAxEPdSSIX9CgG1D44j"
+ENDPOINT = "https://api.marketaux.com/v1/news/all"
 OUTPUT_FILE = "news_content.txt"
 URL_LOG_FILE = "news_urls.txt"
 
 # Parameters for the API request
 parameters = {
-    "apikey": API_KEY,    # API Key
-    "q": "example",       # Search query
-    "lang": "en",         # Language (English)
-    "country": "us",      # Country code
-    "max": 10             # Maximum number of results
+    "api_token": API_KEY,    # API Key
+    "language": "en",         # Language (English)
+    "page_size": 1,          # Number of articles per page
+    "page": 1,               # Page number
+    "returned": 1,           # Number of results to return
+    "limit": 1               # Limit the number of results to 1
 }
 
 # Initialize the global variables
 logged_urls = set()
 DATE_THRESHOLD = datetime.strptime("2024-11-10", "%Y-%m-%d")  # Define the cutoff date
 news_counter = 1  # Default start for the news counter
-
 
 def load_logged_data():
     """Load previously logged URLs and the last counter value."""
@@ -43,7 +43,6 @@ def load_logged_data():
                     news_counter = int(line.split('=')[1].strip()) + 1
     except FileNotFoundError:
         pass  # If file doesn't exist, start from counter 1
-
 
 def fetch_full_content(url):
     """Fetch full article content from the URL."""
@@ -71,8 +70,6 @@ def clear_file(file_path):
     with open(file_path, "w", encoding="utf-8") as file:
         file.write("")  # Write an empty string to clear the file
 
-
-
 def fetch_and_write_news():
     global news_counter
 
@@ -85,19 +82,18 @@ def fetch_and_write_news():
         data = response.json()
 
         # Check if articles exist in the response
-        if "articles" in data:
-            articles = data["articles"]
+        if "data" in data:
+            articles = data["data"]  # Extract articles from 'data' key
             file_path = "news_logger.txt"
             clear_file(file_path)
-
 
             with open(OUTPUT_FILE, "w", encoding="utf-8") as content_file, \
                  open(URL_LOG_FILE, "a", encoding="utf-8") as url_file:
 
                 for article in articles:
                     # Get publication date, content, and URL
-                    published_at = article.get("publishedAt", None)
-                    content = article.get("content", "No Content Available")
+                    published_at = article.get("published_at", None)
+                    content = article.get("description", "No Content Available")
                     url = article.get("url", "No URL Available")
 
                     # Skip if no date, content, or duplicate URL
@@ -105,7 +101,7 @@ def fetch_and_write_news():
                         continue
 
                     # Parse and filter by date
-                    article_date = datetime.strptime(published_at, "%Y-%m-%dT%H:%M:%SZ")
+                    article_date = datetime.strptime(published_at, "%Y-%m-%dT%H:%M:%S.%fZ")
                     if article_date < DATE_THRESHOLD:
                         continue
 

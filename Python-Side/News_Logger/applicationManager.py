@@ -28,4 +28,4 @@ while True:
 
     # Wait for 1 hour (30 secs) before the next iteration
     print("Waiting for 1 hour before the next run...")
-    time.sleep(30)
+    time.sleep(30 * 60)
