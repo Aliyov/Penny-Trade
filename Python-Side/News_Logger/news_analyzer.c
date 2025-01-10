@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
+#include <stdbool.h>
 
 #define TABLE_SIZE 500
 #define MAX_LINE_LENGTH 1024
@@ -18,6 +19,13 @@ typedef struct HashTable {
     Words **table;  // Array of pointers to Words structure
     int size;
 } HashTable;
+
+// Set structure to track processed words
+typedef struct Set {
+    char **words;
+    int size;
+    int capacity;
+} Set;
 
 // Simple hash function to hash a word
 unsigned int hash(const char *word, int size) {
@@ -55,6 +63,41 @@ HashTable *createHashTable(int size) {
     return new_table;
 }
 
+// Function to create a set for tracking processed words
+Set *createSet(int capacity) {
+    Set *new_set = (Set *)malloc(sizeof(Set));
+    if (new_set == NULL) {
+        printf("Error allocating memory for set\n");
+        return NULL;
+    }
+    new_set->words = (char **)malloc(capacity * sizeof(char *));
+    if (new_set->words == NULL) {
+        printf("Error allocating memory for set words\n");
+        free(new_set);
+        return NULL;
+    }
+    new_set->size = 0;
+    new_set->capacity = capacity;
+    return new_set;
+}
+
+// Function to add a word to the set
+bool addToSet(Set *set, const char *word) {
+    if (set->size >= set->capacity) {
+        return false;  // Set is full
+    }
+    // Check if word is already in the set
+    for (int i = 0; i < set->size; i++) {
+        if (strcmp(set->words[i], word) == 0) {
+            return false;  // Word already processed
+        }
+    }
+    // Add word to the set
+    set->words[set->size] = strdup(word);
+    set->size++;
+    return true;
+}
+
 // Function to insert a word into the hash table using linear probing
 void insert(HashTable *hash_table, const char *word, int weight, int flag) {
     unsigned int index = hash(word, hash_table->size);
@@ -65,7 +108,6 @@ void insert(HashTable *hash_table, const char *word, int weight, int flag) {
             // Word already exists, update the weight and flag
             hash_table->table[index]->weight = weight;
             hash_table->table[index]->flag = flag;
-            printf("Updated word: %s, Weight: %d, Flag: %d\n", word, weight, flag);
             return;
         }
         index = (index + 1) % hash_table->size;  // Move to next slot
@@ -86,8 +128,6 @@ void insert(HashTable *hash_table, const char *word, int weight, int flag) {
     new_word->weight = weight;
     new_word->flag = flag;
     hash_table->table[index] = new_word;
-
-   // printf("Inserted word: %s, Weight: %d, Flag: %d\n", word, weight, flag);
 }
 
 // Function to search for a word in the hash table
@@ -140,7 +180,7 @@ void readFileAndInsert(FILE *dp, HashTable *hash_table) {
 }
 
 // Function to read the news content file and sum the weights of words found in the hash table
-int sumWeightsAndFlagsFromFile(FILE *dp, HashTable *hash_table) {
+int sumWeightsAndFlagsFromFile(FILE *dp, HashTable *hash_table, Set *processed_set) {
     if (dp == NULL) {
         printf("Error: File cannot be opened.\n");
         return -1;
@@ -159,12 +199,15 @@ int sumWeightsAndFlagsFromFile(FILE *dp, HashTable *hash_table) {
             // Convert the word to lowercase
             toLowerCase(word);
 
-            Words *found_word = search(hash_table, word);
-            if (found_word != NULL) {
-                total_weight += found_word->weight;  // Sum the weight if the word is found
-                total_flag += found_word->flag;     // Sum the flag if the word is found
-                printf("Found word: %s, Weight: %d, Flag: %d\n", word, found_word->weight, found_word->flag);
+            // If word hasn't been processed, process it
+            if (addToSet(processed_set, word)) {
+                Words *found_word = search(hash_table, word);
+                if (found_word != NULL) {
+                    total_weight += found_word->weight;  // Sum the weight if the word is found
+                    total_flag += found_word->flag;     // Sum the flag if the word is found
+                }
             }
+
             word = strtok(NULL, " ,.-!?");  // Get the next word
         }
     }
@@ -189,6 +232,12 @@ int main() {
         return 1;  // Memory allocation failed
     }
 
+    // Create a set to track processed words
+    Set *processed_set = createSet(TABLE_SIZE);
+    if (processed_set == NULL) {
+        return 1;  // Memory allocation failed
+    }
+
     // Read dictionary file and populate hash table
     readFileAndInsert(dp, hash_table);
     fclose(dp);
@@ -201,22 +250,11 @@ int main() {
     }
 
     // Sum the weights and flags of the words found in the news content file
-    int total_weight = sumWeightsAndFlagsFromFile(news_file, hash_table);
+    int total_weight = sumWeightsAndFlagsFromFile(news_file, hash_table, processed_set);
     fclose(news_file);
 
-    // Output the total weight
-    printf("Total weight of words found in the news content: %d\n", total_weight);
-
-    // Free memory (free all hash table entries)
-    for (int i = 0; i < hash_table->size; i++) {
-        if (hash_table->table[i] != NULL) {
-            free(hash_table->table[i]->word);
-            free(hash_table->table[i]);
-        }
-    }
-    free(hash_table->table);
-    free(hash_table);
-
-    
+    // Output the final result
+    printf("Total weight: %d\n", total_weight);
     return 0;
 }
+

@@ -53,14 +53,14 @@ def fetch_full_content(url):
         # Use BeautifulSoup to parse the HTML and extract the main content
         soup = BeautifulSoup(response.text, 'html.parser')
         article_text = ""
-        
+
         # Extract text from paragraphs
         paragraphs = soup.find_all('p')
         for p in paragraphs:
             article_text += p.get_text() + "\n"
 
         return article_text.strip()
-    
+
     except requests.exceptions.RequestException as e:
         print(f"Error fetching full article content from URL: {e}")
         return None
@@ -84,8 +84,6 @@ def fetch_and_write_news():
         # Check if articles exist in the response
         if "data" in data:
             articles = data["data"]  # Extract articles from 'data' key
-            file_path = "news_logger.txt"
-            clear_file(file_path)
 
             with open(OUTPUT_FILE, "w", encoding="utf-8") as content_file, \
                  open(URL_LOG_FILE, "a", encoding="utf-8") as url_file:
@@ -108,7 +106,7 @@ def fetch_and_write_news():
                     # Fetch the full content from the URL
                     full_content = fetch_full_content(url)
                     if not full_content:
-                        print(f"Could not fetch full content for article: {url}")
+                        #print(f"Could not fetch full content for article: {url}")
                         continue
 
                     # Write the article to the files
@@ -137,3 +135,4 @@ try:
     time.sleep(5)  # Wait for 5 seconds before fetching again
 except KeyboardInterrupt:
     print("News updating stopped.")
+
