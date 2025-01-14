@@ -6,7 +6,7 @@
 
 #define TABLE_SIZE 500
 #define MAX_LINE_LENGTH 1024
-
+#define COUNTRY_TABLE_SIZE 196
 // Structure to hold a word and its corresponding weight and flag
 typedef struct Words {
     char *word;
@@ -26,6 +26,10 @@ typedef struct Set {
     int size;
     int capacity;
 } Set;
+
+typedef struct country{
+    char **country;
+}country;
 
 // Simple hash function to hash a word
 unsigned int hash(const char *word, int size) {
@@ -83,16 +87,25 @@ Set *createSet(int capacity) {
 
 // Function to add a word to the set
 bool addToSet(Set *set, const char *word) {
-    if (set->size >= set->capacity) {
-        return false;  // Set is full
-    }
-    // Check if word is already in the set
+    // Check if the word is already in the set
     for (int i = 0; i < set->size; i++) {
         if (strcmp(set->words[i], word) == 0) {
             return false;  // Word already processed
         }
     }
-    // Add word to the set
+
+    // If the set is full, expand its capacity
+    if (set->size >= set->capacity) {
+        set->capacity *= 2;
+        char **new_words = realloc(set->words, set->capacity * sizeof(char *));
+        if (new_words == NULL) {
+            printf("Error reallocating memory for set\n");
+            return false;
+        }
+        set->words = new_words;
+    }
+
+    // Add the word to the set
     set->words[set->size] = strdup(word);
     set->size++;
     return true;
@@ -199,7 +212,7 @@ int sumWeightsAndFlagsFromFile(FILE *dp, HashTable *hash_table, Set *processed_s
             // Convert the word to lowercase
             toLowerCase(word);
 
-            // If word hasn't been processed, process it
+            // Process the word only if it is successfully added to the set
             if (addToSet(processed_set, word)) {
                 Words *found_word = search(hash_table, word);
                 if (found_word != NULL) {
@@ -215,11 +228,21 @@ int sumWeightsAndFlagsFromFile(FILE *dp, HashTable *hash_table, Set *processed_s
     printf("Total flags of words found: %d\n", total_flag); // Output the total flags
 
     FILE *check = fopen("telegramCheck.txt", "w");
-    fprintf(check, "%d %d", total_flag, total_weight);
+    if (check != NULL) {
+        fprintf(check, "%d %d", total_flag, total_weight);
+        fclose(check); // Ensure the file is properly closed
+    }
     return total_weight;
 }
 
 int main() {
+    FILE *fCountry = fopen("countries.txt", "r");
+    if(fCountry == NULL){
+      printf("Error: cant open countries.txt");
+      return 1;
+    }
+    
+    
     FILE *dp = fopen("dictionary.txt", "r");
     if (dp == NULL) {
         printf("Error: Cannot open file.\n");

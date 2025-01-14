@@ -1,20 +1,44 @@
+binance 0 1
+btc 0 1
 bitcoin 0 1
 ethereum 0 1
-binance 0 1
-blockchain 10 1
-decentralization 20 1
+solana 0 1
+nft 0 1
+xrp 0 1
+tether 0 1
+dogecoin 0 1
+cardano 0 1
+shiba 0 1
+nasdaq 0 1
+wallet 0 1
+asset 0 1
+blockchain 0 1
+decentralization 0 1
+market cap 0 1
+token 0 1
+trade 0 1
+trading 0 1
+trades 0 1
+liquidity 0 1
+bullish 40 1
+bearish -40 1
+satoshi 0 1
+altcoin 0 1
+stablecoin 0 1
+coinbase transaction 0 1
+hot wallet 0 1
+cold wallet 0 1
+metaverse 0 1
+exchange 0 1
+investor 0 1
+investment 0 1
+investors 0 1
+investing 0 1
 ledger 10
 smart contracts 30
 mining 10
 staking 20
-token 0 1
-altcoin 0 1
-stablecoin 20 1
-wallet 0 1
-hot wallet 10 1
-cold wallet 20 1
 paper wallet 20 
-address 0
 private key 10
 public key 10
 seed phrase 20
@@ -30,19 +54,15 @@ liquidity pool 20
 swap 10
 dex 20
 cex -10
-gas fees -20
 governance token 20
 utility token 30
 security token 20
-nft 20 1
-metaverse 30 1
 airdrops 20
 ico 20
 ieo 20
 ido 20
 tokenomics 30
 halving 30
-fork 0
 hard fork 20
 soft fork 10
 scalability 30
@@ -54,12 +74,10 @@ testnet 10
 bridge 10
 cross-chain 20
 multisig 20
-oracle 10
 hash 10
 block height 10
 genesis block 20
 block reward 20
-coinbase transaction 10 1
 gas limit 10
 hashing algorithm 10
 difficulty adjustment 10
@@ -68,8 +86,6 @@ txid 10
 whale 10
 rug pull -80
 pump and dump -70
-market cap 10 1
-satoshi 20 1
 wei 10
 gwei 10
 erc-20 10
@@ -98,19 +114,14 @@ hodl 20
 crisis -40
 growth 30
 decline -10
-btc 0 1
-solana 0 1
-stable 0
+stable 10
 profit 50
 loss -50
-bullish 40 1
-bearish -40 1
 investment 20
 collapse -70
 surge 30
 plummet -50
-trade 10 1
-market 0
+market 10
 regulation -10
 adoption 30
 scam -80
@@ -125,22 +136,17 @@ pump 20
 yield 20
 fraud -80
 exchange 0
-fees 0
 stake 10
 leverage -20
 debt -40
 deflation -20
 inflation -30
 equity 30
-asset 10 1
 futures -10
-options 0
 security 10
-liquidity 20 1
 hedge 10
 risk -20
 reward 30
-fiat 0
 portfolio 20
 breach -70
 hacker -80
@@ -165,7 +171,6 @@ losses -50
 earnings 40
 fud -50
 hype 10
-chart 0
 trend 10
 breakout 30
 support 20
@@ -203,7 +208,6 @@ deflationary 30
 buyback 30
 liquidation -50
 defaults -40
-contract 0
 escrow 10
 peer-to-peer 20
 spread -10
@@ -219,7 +223,6 @@ profit margin 30
 forecast 20
 projections 20
 risk assessment 10
-quantitative easing 0
 monetary policy -10
 stimulus 20
 interest rate -10
@@ -230,7 +233,6 @@ loan -20
 repayment 10
 fundraising 30
 venture capital 40
-series a 20
 ipo 40
 stock 20
 bond 20

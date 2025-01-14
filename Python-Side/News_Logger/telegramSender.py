@@ -59,9 +59,10 @@ def monitor_file(file_path):
                 # Read integers from the telegram check file
                 num1, num2 = read_integers_from_file(FILE_TGCHECK)
                 # Construct the message
-                message = f"Relativity: {num1} Positivity: {num2}\n {news}"
-                # Send the message
-                send_telegram_message(message)
+                if num1 > 0:
+                    message = f"Relativity: {num1} Positivity: {num2}\n {news}"
+                    # Send the message
+                    send_telegram_message(message)
 
     except Exception as e:
         print(f"Error: {e}")

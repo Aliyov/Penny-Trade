@@ -106,11 +106,10 @@ def fetch_and_write_news():
                     # Fetch the full content from the URL
                     full_content = fetch_full_content(url)
                     if not full_content:
-                        #print(f"Could not fetch full content for article: {url}")
                         continue
 
-                    # Write the article to the files
-                    formatted_content = f"URL: {url}\n\n{full_content}"
+                    # Convert all content to lowercase before writing
+                    formatted_content = f"URL: {url}\n\n{full_content.lower()}"
                     content_file.write(f"NEWScounter = {news_counter}\n")
                     content_file.write(formatted_content + "\n" + "=" * 80 + "\n")
                     url_file.write(url + "\n")
@@ -130,7 +129,6 @@ def fetch_and_write_news():
 # Main execution loop
 load_logged_data()  # Load previous logs and counter
 try:
-    #while True:
     fetch_and_write_news()
     time.sleep(5)  # Wait for 5 seconds before fetching again
 except KeyboardInterrupt:
