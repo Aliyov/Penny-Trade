@@ -225,7 +225,7 @@ int sumWeightsAndFlagsFromFile(FILE *dp, HashTable *hash_table, Set *processed_s
         }
     }
 
-    printf("Total flags of words found: %d\n", total_flag); // Output the total flags
+    //printf("Total flags of words found: %d\n", total_flag); // Output the total flags
 
     FILE *check = fopen("telegramCheck.txt", "w");
     if (check != NULL) {
@@ -277,7 +277,7 @@ int main() {
     fclose(news_file);
 
     // Output the final result
-    printf("Total weight: %d\n", total_weight);
+    //printf("Total weight: %d\n", total_weight);
     return 0;
 }
 

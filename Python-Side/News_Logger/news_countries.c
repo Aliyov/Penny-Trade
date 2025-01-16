@@ -134,7 +134,7 @@ void processNewsContent(FILE *ff, const char* filename) {
     }
     
     if (!found) {
-        fprintf(ff, "NA");  // Debugging print
+        fprintf(ff, "NA\n");  // Debugging print
     }
 
     fclose(file);
